@@ -13,3 +13,6 @@ A trivia game where the player must traverse through a maze of rooms while answe
 - Natalie Hong
 - Tien Truong
 - Bryce Fukuda
+
+
+#### [Link to SRS (in development)](https://docs.google.com/document/d/1ismfGNj-UT2EtODo7nGaSXKTYWZao-CG/edit)
