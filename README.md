@@ -9,6 +9,12 @@ A trivia game where the player must traverse through a maze of rooms while answe
 - SQLLite database file incorporated into the program
 - Display of the maze, current room info, questions and answer choices, and progress is provided
 
+### Safety Requirements:
+- The game must meet the requirements, the necessary configuration to not happen overload of the computer
+- All players will always  receive notifications in the game whenever they play too long.
+- Whenever overload happens, all the system should be shut down immediately.
+
+
 ### Team:
 - Natalie Hong
 - Tien Truong
