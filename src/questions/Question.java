@@ -33,5 +33,15 @@ public interface Question {
      *
      * @return hint text
      */
-    public String getHint();
+    String getHint();
+
+    /**
+     * Checks if the player's choice is the correct answer
+     * by comparing their input to the question's answer,
+     * returns boolean of whether their answer is correct.
+     *
+     * @return true if player's answer matches the question answer,
+     *         otherwise return false
+     */
+    boolean isCorrect(String playerAnswer);
 }

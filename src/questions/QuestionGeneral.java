@@ -70,6 +70,18 @@ public abstract class QuestionGeneral implements Question {
     }
 
     /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean isCorrect(String playerAnswer) {
+        if (this.answer.equals(playerAnswer)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
      * Creates string of id, question, any choices, answer, and hint.
      *
      * @return String of all fields for question.
