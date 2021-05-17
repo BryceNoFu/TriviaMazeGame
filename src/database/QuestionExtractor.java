@@ -26,9 +26,9 @@ public class QuestionExtractor {
             statement.setQueryTimeout(15); // timeout set to 15 seconds
 
             // executeUpdate() to update the db
-            statement.executeUpdate("drop table if exists questionTable");
-            statement.executeUpdate("create table questionTable (" +
-                    "id integer, " +
+            statement.executeUpdate("DROP TABLE if EXISTS questionTable");
+            statement.executeUpdate("CREATE TABLE questionTable (" +
+                    "id INTEGER, " +
                     "type string," +
                     "question string, " +
                     "choice1 string, " +
@@ -38,13 +38,14 @@ public class QuestionExtractor {
                     "answer string," +
                     "hint string)");
 
+            // read from .txt file and put into db file
             BufferedReader reader;
             try {
                 reader = new BufferedReader(new FileReader("src/database/Q_List.txt"));
                 String line = reader.readLine();
                 while (line != null) {
                     String[] properties = line.split("\t");
-                    statement.executeUpdate("insert into questionTable values(" +
+                    statement.executeUpdate("INSERT INTO questionTable VALUES(" +
                             Integer.parseInt(properties[0]) + ", '" + // id
                             properties[1] + "', '" + // type
                             properties[2] + "', '" + // question
