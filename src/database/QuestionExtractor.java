@@ -10,12 +10,17 @@ import java.sql.Statement;
 
 /**
  * A class to run the extraction of questions from .txt file to an database .db file.
- * Only execute once, only if there is not questions database already available.
+ * Only execute once, only if there is no questions database already available.
  *
  * @author Bryce Fukuda
  */
 public class QuestionExtractor {
 
+    /**
+     * Main method to execute the program.
+     *
+     * @param args for console arguments, not used
+     */
     public static void main(String[] args) {
         // establish connection object, to interact with db
         Connection connection = null;
@@ -65,6 +70,7 @@ public class QuestionExtractor {
             // executeQuery() to retrieve from db
         } catch (SQLException throwables) {
             System.err.println(throwables.getMessage());
+            System.exit(0);
         }
 
 
