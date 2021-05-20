@@ -60,6 +60,9 @@ class QuestionMCTest {
         assertFalse(mcQ.isCorrect("4"), "Answer is 2.");
     }
 
+    /**
+     * Test method for QuestionMC's toString method.
+     */
     @Test
     void testToString() {
         assertEquals(

@@ -46,4 +46,17 @@ class QuestionSHORTTest {
         assertFalse(shortQ.isCorrect("2017"), "Answer is 2016, wrong answer.");
         assertFalse(shortQ.isCorrect("Japan"), "Answer is 2016, bad input.");
     }
+
+    /**
+     * Test method for QuestionSHORT's toString method.
+     */
+    @Test
+    void testToString() {
+        assertEquals(
+                "ID: 5\n" +
+                        "Question: What year was the Rio Olympics?\n" +
+                        "Answer: 2016\n" +
+                        "Hint: Before 2017.\n" ,
+                shortQ.toString(), "List out fields.");
+    }
 }

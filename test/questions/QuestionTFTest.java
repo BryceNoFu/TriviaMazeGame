@@ -71,6 +71,9 @@ class QuestionTFTest {
         assertFalse(tfQIncorrect.isCorrect(tfQCorrect.getAnswer()), "Should give back FALSE.");
     }
 
+    /**
+     * Test method for QuestionTF's toString method.
+     */
     @Test
     void testToString() {
         assertEquals(
