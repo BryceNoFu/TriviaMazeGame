@@ -1,7 +1,9 @@
 package questions;
 
 /**
- * Abstract class for question classes.
+ * Abstract class for question classes. Required methods are getters for
+ * the question's id, actual question, answer, hint, and check if the
+ * player picked the right answer.
  *
  * @author Bryce Fukuda
  */
