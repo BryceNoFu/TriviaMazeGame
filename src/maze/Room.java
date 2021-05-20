@@ -1,3 +1,5 @@
+package maze;
+
 public class Room {
 
     enum Door {
@@ -15,6 +17,7 @@ public class Room {
         }
     }
 
+    private Point position;
     private Question question;
     private int hints;
     private int[] doors;
@@ -24,17 +27,38 @@ public class Room {
     }
 
     public Room(int hints) {
-        this(hints, null);
+        this(hints, new Point(0,0));
     }
 
-    public Room(int hints, Question question) {
+    public Room(int hints, Point position) {
+        this(hints, position, null);
+    }
+
+    public Room(int hints, Point position, Question question) {
         this.hints = hints;
+        this.position = position;
         this.doors = new int[4];
         this.doors[Door.NORTH.getValue()] = 0;
         this.doors[Door.SOUTH.getValue()] = 0;
         this.doors[Door.WEST.getValue()] = 0;
         this.doors[Door.EAST.getValue()] = 0;
         this.question = question;
+    }
+
+    public void setHints(int hints) {
+        this.hints = hints;
+    }
+
+    public int getHints() {
+        return this.hints;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
+
+    public Question getQuestion() {
+        return this.question;
     }
 
     public void openDoor(Door door) {
@@ -93,13 +117,7 @@ public class Room {
         return this.question;
     }
 
-    public void increaseHint()
-    {
-        this.hints++;
-    }
-
-    public void decreaesHint()
-    {
-        this.hints--;
+    public String currentRoomString() {
+        return "Room: " + this.position.getX() + ", " + this.position.getY();
     }
 }

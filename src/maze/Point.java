@@ -1,8 +1,11 @@
+package maze;
+
 public class Point {
     private int xCoordinate;
     private int yCoordinate;
 
     public Point() {
+        this(0, 0);
     }
 
     public Point(int x, int y) {
