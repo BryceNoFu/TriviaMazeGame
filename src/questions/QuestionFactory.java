@@ -4,10 +4,6 @@ package questions;
  * Factory to instantiate a class based on the given
  * question's type (multiple choice, true/false, or short answer).
  *
- * GIVEN THE UNIQUENESS OF EACH QUESTION CLASS, PROGRAMMING TO AN
- * INTERFACE WILL MAKE CHILD-SPECIFIC METHODS INACCESSIBLE. THIS FACTORY MIGHT NOT
- * BE USED IN THE FINAL ITERATION!
- *
  * @author Bryce Fukuda
  */
 public class QuestionFactory {

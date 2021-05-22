@@ -1,13 +1,20 @@
 package questions;
 
+import java.io.Serializable;
+
 /**
  * Question of type true or false. Player must pick
  * either true or false based on the statement of the question.
  *
  * @author Bryce Fukuda
  */
-public class QuestionTF extends QuestionGeneral {
+public class QuestionTF extends QuestionGeneral implements Serializable {
     // fields
+    /**
+     * Serialization for the question.
+     */
+    private static final long serialVersionUID = -230647009084190467L;
+
     /**
      * String array to store two choices (TRUE / FALSE).
      */
