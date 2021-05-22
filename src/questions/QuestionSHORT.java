@@ -8,6 +8,10 @@ package questions;
  */
 public class QuestionSHORT extends QuestionGeneral{
     // fields
+    /**
+     * String array to store four choices.
+     */
+    private String[] choices = {""};
 
     // constructors
     public QuestionSHORT(int id, String question, String answer, String hint) {
@@ -15,6 +19,11 @@ public class QuestionSHORT extends QuestionGeneral{
     }
 
     // methods
+
+    @Override
+    public String[] getChoices() {
+        return choices;
+    }
 
     @Override
     public String toString() {
@@ -26,4 +35,6 @@ public class QuestionSHORT extends QuestionGeneral{
 
         return str.toString();
     }
+
+
 }

@@ -21,10 +21,9 @@ public class QuestionMC extends QuestionGeneral {
 
     // methods
     /**
-     * Getter method for the array of answer choices.
-     *
-     * @return array of choices
+     * {@inheritDoc}
      */
+    @Override
     public String[] getChoices() {
         return choices;
     }

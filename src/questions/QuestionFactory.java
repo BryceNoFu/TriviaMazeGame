@@ -12,6 +12,21 @@ package questions;
  */
 public class QuestionFactory {
 
+    /**
+     * Creates a question class based on the type of question provided and arguments for the
+     * class fields. "mc" for multiple choice, "tf" for true/false, and "short" for short answer.
+     *
+     * @param type question type and format
+     * @param id question id, or number
+     * @param questionStr question being asked
+     * @param choice1 first answer choice
+     * @param choice2 second answer choice
+     * @param choice3 third answer choice
+     * @param choice4 fourth answer choice
+     * @param answer actual answer to question
+     * @param hint hint for the question
+     * @return constructed question class
+     */
     public static Question createQuestion(String type,
                                    int id,
                                    String questionStr,

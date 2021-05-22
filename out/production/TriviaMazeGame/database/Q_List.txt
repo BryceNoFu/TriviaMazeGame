@@ -67,7 +67,7 @@
 67	tf	Funko Inc., known for the Funko Pop! line, is headquartered at Edmons, Washington. 	TRUE	FALSE			FALSE	It''s guaranteed that its location is north of Seattle and starts with an "E".
 68	tf	The city of Leavenworth in Chelan County is modeled on the Bavarian village since the 1960''s.	TRUE	FALSE			TRUE	Bavaria is Land in southeastern Germany.
 69	tf	The official Washington state flower is the forget-me-not.	TRUE	FALSE			FALSE	Alaska thinks you''re a little forgetful…
-70	tf	Before forming the rock band Pearl Jam, frontman Eddie Vedder was part of the Seattle grunge group Stone Temple Pilots.	TRUE	FALSE			FALSE	Woof. Bark. Arf.
+70	tf	Before forming the rock band Pearl Jam, frontman Eddie Vedder was part of the Seattle grunge group Alice in Chains.	TRUE	FALSE			FALSE	He was in a dog temple.
 71	tf	Former Boeing engineer Bill Nye first introduced the titular Bill Nye the Science Guy on the 1990''s sketch show Almost Live!	TRUE	FALSE			TRUE	Before PBS and Disney aired the shows every 90''s kid watched.
 72	tf	The Space Needle is the current tallest building in Seattle.	TRUE	FALSE			FALSE	Look carefully at the Seattle skyline…
 73	tf	Washington state''s official state fruit is the orange.	TRUE	FALSE			FALSE	It''s like comparing apples to oranges.

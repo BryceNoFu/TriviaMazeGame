@@ -21,10 +21,9 @@ public class QuestionTF extends QuestionGeneral {
 
     // methods
     /**
-     * Getter method for the array of the two choices.
-     *
-     * @return array of choices
+     * {@inheritDoc}
      */
+    @Override
     public String[] getChoices() {
         return choices;
     }

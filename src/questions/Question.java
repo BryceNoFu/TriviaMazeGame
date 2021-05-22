@@ -24,6 +24,13 @@ public interface Question {
     String getQuestion();
 
     /**
+     * Getter question answer choices in String array.
+     *
+     * @return array of answer choices
+     */
+    String[] getChoices();
+
+    /**
      * Getter method for answer.
      *
      * @return answer text
