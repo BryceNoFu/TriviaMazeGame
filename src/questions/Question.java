@@ -9,7 +9,7 @@ package questions;
  */
 public interface Question {
     /**
-     * Enum constants to state the type of question
+     * Enum constants to state the type of question.
      */
     enum Type {
         MC, // multiple choice
