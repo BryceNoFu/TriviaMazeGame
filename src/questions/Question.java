@@ -8,6 +8,21 @@ package questions;
  * @author Bryce Fukuda
  */
 public interface Question {
+    /**
+     * Enum constants to state the type of question
+     */
+    enum Type {
+        MC, // multiple choice
+        TF, // true/false
+        SHORT // short answer
+    }
+
+    /**
+     * Getter method for question type (enum).
+     *
+     * @return question type
+     */
+    Type getType();
 
     /**
      * Getter method for id.

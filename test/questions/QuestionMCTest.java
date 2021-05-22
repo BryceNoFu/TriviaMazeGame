@@ -30,6 +30,7 @@ class QuestionMCTest {
      */
     @Test
      void testQuestionFields() {
+        assertEquals(Question.Type.MC, mcQ.getType(), "Should be MC.");
         assertEquals(11, mcQ.getId(), "id should be 11.");
         assertEquals("What is 1 + 1?", mcQ.getQuestion(), "Ask about 1 + 1.");
         assertEquals("2", mcQ.getAnswer(), "2.");

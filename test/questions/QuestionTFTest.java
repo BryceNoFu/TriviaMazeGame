@@ -62,10 +62,12 @@ class QuestionTFTest {
      */
     @Test
     void testIsCorrect() {
+        assertEquals(Question.Type.TF, tfQCorrect.getType(), "Should be TF.");
         assertFalse(tfQCorrect.isCorrect("FALSE"), "Answer is not FALSE.");
         assertTrue(tfQCorrect.isCorrect("TRUE"), "Answer is TRUE.");
         assertTrue(tfQCorrect.isCorrect(tfQCorrect.getAnswer()), "Should give back TRUE.");
 
+        assertEquals(Question.Type.TF, tfQIncorrect.getType(), "Should be TF.");
         assertFalse(tfQIncorrect.isCorrect("TRUE"), "Answer is not TRUE.");
         assertTrue(tfQIncorrect.isCorrect("FALSE"), "Answer is FALSE.");
         assertFalse(tfQIncorrect.isCorrect(tfQCorrect.getAnswer()), "Should give back FALSE.");

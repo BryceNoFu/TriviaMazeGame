@@ -23,6 +23,7 @@ public class QuestionSHORT extends QuestionGeneral implements Serializable {
     // constructors
     public QuestionSHORT(int id, String question, String answer, String hint) {
         super(id, question, answer, hint);
+        this.setType(Type.SHORT);
     }
 
     // methods

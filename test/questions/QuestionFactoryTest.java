@@ -2,6 +2,7 @@ package questions;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestTemplate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -37,6 +38,16 @@ class QuestionFactoryTest {
         q1 = QuestionFactory.createQuestion("mc", 1, "What is 1 + 1?", "1", "2", "3", "4", "2", "Not 11.");
         q2 = QuestionFactory.createQuestion("tf", 2, "Potato is a fruit.", "TRUE", "FALSE", "", "", "FALSE", "Vege.");
         q3 = QuestionFactory.createQuestion("short", 3, "USA declared independence in what year?", "", "", "", "", "1776", "July 4th.");
+    }
+
+    /**
+     * Test for question types are set correctly.
+     */
+    @Test
+    void testType() {
+        assertEquals(Question.Type.MC, q1.getType());
+        assertEquals(Question.Type.TF, q2.getType());
+        assertEquals(Question.Type.SHORT, q3.getType());
     }
 
     /**

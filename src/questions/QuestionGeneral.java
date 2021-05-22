@@ -9,6 +9,11 @@ package questions;
 public abstract class QuestionGeneral implements Question {
     // fields
     /**
+     * Question enum type.
+     */
+    private Type type;
+
+    /**
      * Question id, 1 to 100.
      */
     private int id;
@@ -37,6 +42,24 @@ public abstract class QuestionGeneral implements Question {
     }
 
     // methods
+
+    /**
+     * Set the type of question.
+     *
+     * @param type
+     */
+    protected void setType(Type type) {
+        this.type = type;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Type getType() {
+        return this.type;
+    }
+
     /**
      * {@inheritDoc}
      */

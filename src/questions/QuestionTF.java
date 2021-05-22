@@ -24,6 +24,7 @@ public class QuestionTF extends QuestionGeneral implements Serializable {
     public QuestionTF(int id, String question, String[] choices, String answer, String hint) {
         super(id, question, answer, hint);
         this.choices = choices;
+        this.setType(Type.TF);
     }
 
     // methods

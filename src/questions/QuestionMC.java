@@ -24,6 +24,7 @@ public class QuestionMC extends QuestionGeneral implements Serializable {
     public QuestionMC(int id, String question, String[] choices, String answer, String hint) {
         super(id, question, answer, hint);
         this.choices = choices;
+        this.setType(Type.MC);
     }
 
     // methods
