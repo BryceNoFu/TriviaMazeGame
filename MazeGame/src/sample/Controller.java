@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -21,6 +22,8 @@ public class Controller implements Initializable {
     private Node node;
     private Stage stage;
     private Scene scene;
+    @FXML
+    private ImageView Move;
 
     @FXML
     void dragged (MouseEvent event) {
@@ -66,9 +69,22 @@ public class Controller implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    @FXML
-    void mouseEntered(MouseEvent event) {
 
+    @FXML
+    void switchToField (ActionEvent event) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("test.fxml"));
+        node = (Node) event.getSource();
+        stage = (Stage) node.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void moveChac(ActionEvent event) throws IOException {
+        System.out.println(Move.getX());
+        Move.setTranslateX(100);
+        Move.setTranslateY(50);
 
     }
     @Override

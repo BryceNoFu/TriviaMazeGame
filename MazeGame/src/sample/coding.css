@@ -2,7 +2,6 @@
     -fx-background-image: url("maze.jpg");
     -fx-background-size: cover;
 }
-
-#sizeButton{
-    -fx-highlight-text-fill: white;
+.image{
+    -fx-background-image: url("wall.jpg");
 }
