@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -28,7 +29,6 @@ public class QuestionList {
      * Constructor for QuestionList.
      */
     public QuestionList() {
-        // TODO: Use methods to initialize question list
         questionList = new ArrayList<>();
         obtainQuestions();
     }
@@ -47,10 +47,11 @@ public class QuestionList {
             statement.setQueryTimeout(15); // timeout set to 15 seconds
             String query = "SELECT * FROM questionTable";
 
+            // query the table contents row-by-row
             ResultSet rs = statement.executeQuery(query);
 
             while (rs.next()) {
-                int id = Integer.getInteger(rs.getString("id"));
+                int id = rs.getInt("id");
                 String type = rs.getString("type");
                 String question = rs.getString("question");
                 String choice1 = rs.getString("choice1");
@@ -73,8 +74,45 @@ public class QuestionList {
      *
      * @return list size for the questions
      */
-    int getSize() {
+    public int getSize() {
         return questionList.size();
+    }
+
+    /**
+     * Determines if the question list is empty.
+     *
+     * @return true if empty, false otherwise
+     */
+    public boolean isEmpty() {
+        if (questionList.isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Gets the first question from the list, removes the question from the list
+     * afterwards.
+     *
+     * @return first question in the list
+     */
+    public Question getQuestion() {
+        if (!isEmpty()) { // non-empty list
+            Question question = questionList.get(0);
+            questionList.remove(0);
+            return question;
+        } else {
+            System.out.println("EMPTY LIST!");
+            return null;
+        }
+    }
+
+    /**
+     * Shuffles the ordering of the questions inside the list.
+     */
+    public void shuffle() {
+        Collections.shuffle(questionList);
     }
 
 
