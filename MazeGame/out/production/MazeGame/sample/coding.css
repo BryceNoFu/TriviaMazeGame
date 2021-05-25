@@ -1,4 +1,7 @@
-.root{
+.back{
     -fx-background-image: url("maze.jpg");
     -fx-background-size: cover;
+}
+#sizeButton{
+    -fx-highlight-text-fill: white;
 }
