@@ -33,11 +33,36 @@ public class Maze {
     /** The list of questions in the maze. */
     private List<Question> questionList;
 
+
     /**
      * Construct a maze object that takes width, height and number of hints.
      * @param width the width of maze
      * @param height the height of maze
      * @param hints the number of hints
+     */
+    public Maze(int width, int height, int hints)
+    {
+        this.random = new Random(42);
+        this.currentPosition = null;
+        this.rooms = new Room[height][width];
+        this.questionList = new ArrayList<Question>();
+        this.hints = hints;
+        this.width = width;
+        this.height = height;
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                rooms[i][j] = new Room();
+            }
+        }
+    }
+
+    /**
+     * Construct a maze object that takes width, height, number of hints
+     * and current position.
+     * @param width the width of maze
+     * @param height the height of maze
+     * @param hints the number of hints
+     * @param position the position of current room
      */
     public Maze(int width, int height, int hints, Point position)
     {
@@ -53,6 +78,38 @@ public class Maze {
                 rooms[i][j] = new Room();
             }
         }
+    }
+
+    /**
+     * Sets the width of the maze.
+     * @param width the width of the maze
+     */
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    /**
+     * Returns the width of maze.
+     * @return the width of maze
+     */
+    public int getWidth() {
+        return  this.width;
+    }
+
+    /**
+     * Sets the height of the maze.
+     * @param height the height of the maze
+     */
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    /**
+     * Returns the height of maze.
+     * @return the height of maze
+     */
+    public int getHeight() {
+        return this.height;
     }
 
     /**
