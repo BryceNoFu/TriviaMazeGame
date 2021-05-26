@@ -33,7 +33,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
                      <top>
                         <AnchorPane prefHeight="15.0" prefWidth="95.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </top>
@@ -47,7 +47,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" styleClass="exitDoor" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
@@ -81,7 +81,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
@@ -98,7 +98,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
@@ -115,7 +115,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
@@ -132,7 +132,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -149,7 +149,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black; -fx-background-image: Transparent;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -166,7 +166,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
@@ -183,7 +183,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
@@ -200,7 +200,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
@@ -217,7 +217,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -234,7 +234,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
@@ -251,7 +251,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
@@ -268,7 +268,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
@@ -285,7 +285,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
@@ -302,7 +302,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -319,7 +319,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
@@ -336,7 +336,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
@@ -353,7 +353,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
@@ -370,7 +370,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
@@ -387,7 +387,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
@@ -404,7 +404,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
@@ -421,24 +421,7 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
-                     </center>
-                  </BorderPane>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
-                     <top>
-                        <AnchorPane prefHeight="15.0" prefWidth="95.0" styleClass="image" BorderPane.alignment="CENTER" />
-                     </top>
-                     <left>
-                        <AnchorPane prefHeight="25.0" prefWidth="35.0" styleClass="image" BorderPane.alignment="CENTER" />
-                     </left>
-                     <bottom>
-                        <AnchorPane prefHeight="15.0" prefWidth="95.0" styleClass="image" BorderPane.alignment="CENTER" />
-                     </bottom>
-                     <right>
-                        <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
-                     </right>
-                     <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" styleClass="exitDoor" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
@@ -455,7 +438,24 @@
                         <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: Black;" BorderPane.alignment="CENTER" />
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: Black;" visible="false" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <AnchorPane prefHeight="15.0" prefWidth="95.0" styleClass="image" BorderPane.alignment="CENTER" />
+                     </top>
+                     <left>
+                        <AnchorPane prefHeight="25.0" prefWidth="35.0" styleClass="image" BorderPane.alignment="CENTER" />
+                     </left>
+                     <bottom>
+                        <AnchorPane prefHeight="15.0" prefWidth="95.0" styleClass="image" BorderPane.alignment="CENTER" />
+                     </bottom>
+                     <right>
+                        <AnchorPane prefHeight="30.0" prefWidth="31.0" styleClass="image" BorderPane.alignment="CENTER" />
+                     </right>
+                     <center>
+                        <AnchorPane prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: black;" visible="false" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                </children>
@@ -522,13 +522,13 @@
                               <String fx:value="darkWall" />
                            </styleClass>
                         </AnchorPane>
-                        <AnchorPane fx:id="southDoor" prefHeight="200.0" prefWidth="200.0" styleClass="door" />
+                        <AnchorPane fx:id="southDoor" onMouseClicked="#moveChac" prefHeight="200.0" prefWidth="200.0" styleClass="door" />
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="darkWall" />
                      </children>
                   </HBox>
                </bottom>
                <right>
-                  <AnchorPane fx:id="eastDoor" prefHeight="100.0" prefWidth="101.0" styleClass="door" BorderPane.alignment="CENTER" />
+                  <AnchorPane fx:id="eastDoor" onMouseClicked="#moveChac" prefHeight="100.0" prefWidth="101.0" styleClass="door" BorderPane.alignment="CENTER" />
                </right>
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="character" BorderPane.alignment="CENTER" />

@@ -41,11 +41,8 @@ public class Controller implements Initializable {
     @FXML
     private AnchorPane eastDoor;
 
-    @FXML
-    private Button okButton;
 
-    @FXML
-    private DialogPane testDialog;
+
 
     @FXML
     void dragged (MouseEvent event) {
@@ -104,22 +101,35 @@ public class Controller implements Initializable {
 
     @FXML
     void moveChac(MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("dialogTest.fxml"));
-        Dialog dialog = new Dialog();
-        dialog.getDialogPane().setContent(root);
         Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setHeaderText("There's no room");
+        alert.setHeaderText("The door's locked");
         if(event.getPickResult().getIntersectedNode().getId().equals("northDoor")){
             if (Move.getTranslateY()==0){
-                //alert.show();
-                dialog.show();
+                alert.show();
                 System.out.println("The're no door in North!!");
             }
+            else Move.setTranslateY(Move.getTranslateY()-60);
         }
         if(event.getPickResult().getIntersectedNode().getId().equals("westDoor")){
-            if (Move.getTranslateX()==0){
+            if (Move.getTranslateX()==-93){
+                alert.show();
                 System.out.println("The're no door!!");
             }
+            else Move.setTranslateX(Move.getTranslateX()-93);
+        }
+        if(event.getPickResult().getIntersectedNode().getId().equals("eastDoor")){
+            if (Move.getTranslateX()==279){
+                alert.show();
+                System.out.println("The're no door!!");
+            }
+            else Move.setTranslateX(Move.getTranslateX()+93);
+        }
+        if(event.getPickResult().getIntersectedNode().getId().equals("southDoor")){
+            if (Move.getTranslateY()==240){
+                alert.show();
+                System.out.println("The're no door!!");
+            }
+            else Move.setTranslateY(Move.getTranslateY()+60);
         }
 //        if (Move.getTranslateX()<400) {
 //            Move.setTranslateX(100 + Move.getTranslateX());
