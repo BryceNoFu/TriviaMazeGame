@@ -65,9 +65,9 @@ class QuestionFactoryTest {
      */
     @Test
     void testQuestion() {
-        assertEquals("What is 1 + 1?", q1.getQuestion());
-        assertEquals("Potato is a fruit.", q2.getQuestion());
-        assertEquals("USA declared independence in what year?", q3.getQuestion());
+        assertEquals("What is 1 + 1?", q1.getQuestionStr());
+        assertEquals("Potato is a fruit.", q2.getQuestionStr());
+        assertEquals("USA declared independence in what year?", q3.getQuestionStr());
     }
 
     /**

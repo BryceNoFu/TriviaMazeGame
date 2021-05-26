@@ -34,13 +34,13 @@ class QuestionTFTest {
     void testQuestionFields() {
         // assertions for the correct question
         assertEquals(3, tfQCorrect.getId(), "id should be 3.");
-        assertEquals("1 + 1 is 2.", tfQCorrect.getQuestion(), "Ask about 1 + 1.");
+        assertEquals("1 + 1 is 2.", tfQCorrect.getQuestionStr(), "Ask about 1 + 1.");
         assertEquals("TRUE", tfQCorrect.getAnswer(), "TRUE.");
         assertEquals("not FALSE.", tfQCorrect.getHint(), "Proper hint says not FALSE.");
 
         // assertions for the incorrect question
         assertEquals(4, tfQIncorrect.getId(), "id should be 4.");
-        assertEquals("Dogs are plants.", tfQIncorrect.getQuestion(), "Ask about dogs being plants.");
+        assertEquals("Dogs are plants.", tfQIncorrect.getQuestionStr(), "Ask about dogs being plants.");
         assertEquals("FALSE", tfQIncorrect.getAnswer(), "FALSE.");
         assertEquals("not TRUE.", tfQIncorrect.getHint(), "Proper hint says not TRUE.");
     }

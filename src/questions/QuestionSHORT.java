@@ -37,7 +37,7 @@ public class QuestionSHORT extends QuestionGeneral implements Serializable {
     public String toString() {
         StringBuilder str = new StringBuilder();
         str.append("ID: " + getId() + "\n");
-        str.append("Question: " + getQuestion() + "\n");
+        str.append("Question: " + getQuestionStr() + "\n");
         str.append("Answer: " + getAnswer() + "\n");
         str.append("Hint: " + getHint() + "\n");
 

@@ -31,6 +31,7 @@ public class QuestionList {
     public QuestionList() {
         questionList = new ArrayList<>();
         obtainQuestions();
+        shuffle();
     }
 
     // methods
@@ -111,7 +112,7 @@ public class QuestionList {
     /**
      * Shuffles the ordering of the questions inside the list.
      */
-    public void shuffle() {
+    private void shuffle() {
         Collections.shuffle(questionList);
     }
 

@@ -32,7 +32,7 @@ class QuestionMCTest {
      void testQuestionFields() {
         assertEquals(Question.Type.MC, mcQ.getType(), "Should be MC.");
         assertEquals(11, mcQ.getId(), "id should be 11.");
-        assertEquals("What is 1 + 1?", mcQ.getQuestion(), "Ask about 1 + 1.");
+        assertEquals("What is 1 + 1?", mcQ.getQuestionStr(), "Ask about 1 + 1.");
         assertEquals("2", mcQ.getAnswer(), "2.");
         assertEquals("Not 11.", mcQ.getHint(), "Proper hint says not 11.");
      }

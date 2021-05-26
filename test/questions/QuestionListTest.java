@@ -64,7 +64,7 @@ class QuestionListTest {
 
         assertEquals(testQ.getId(), q.getId(), "Should have same id.");
         assertEquals(testQ.getType(), q.getType(), "Should have same type.");
-        assertEquals(testQ.getQuestion(), q.getQuestion(), "Should have same question.");
+        assertEquals(testQ.getQuestionStr(), q.getQuestionStr(), "Should have same question.");
         assertArrayEquals(testQ.getChoices(), q.getChoices(), "Should have same choices.");
         assertEquals(testQ.getAnswer(), q.getAnswer(), "Should have same answer.");
         assertEquals(testQ.getHint(), q.getHint(), "Should have same hint.");

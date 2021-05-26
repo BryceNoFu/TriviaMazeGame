@@ -36,7 +36,7 @@ public interface Question {
      *
      * @return question text
      */
-    String getQuestion();
+    String getQuestionStr();
 
     /**
      * Getter question answer choices in String array.
@@ -44,6 +44,9 @@ public interface Question {
      * @return array of answer choices
      */
     String[] getChoices();
+
+
+
 
     /**
      * Getter method for answer.

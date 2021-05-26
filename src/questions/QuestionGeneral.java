@@ -72,7 +72,7 @@ public abstract class QuestionGeneral implements Question {
      * {@inheritDoc}
      */
     @Override
-    public String getQuestion() {
+    public String getQuestionStr() {
         return question;
     }
 

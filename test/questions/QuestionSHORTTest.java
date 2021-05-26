@@ -32,7 +32,7 @@ class QuestionSHORTTest {
     void testQuestionFields() {
         assertEquals(Question.Type.SHORT, shortQ.getType(), "Should be SHORT.");
         assertEquals(5, shortQ.getId(), "id should be 5.");
-        assertEquals("What year was the Rio Olympics?", shortQ.getQuestion(), "Ask about year of Rio Olympics.");
+        assertEquals("What year was the Rio Olympics?", shortQ.getQuestionStr(), "Ask about year of Rio Olympics.");
         assertArrayEquals(new String[]{""}, shortQ.getChoices(), "Should be blank string array.");
         assertEquals("2016", shortQ.getAnswer(), "2016.");
         assertEquals("Before 2017.", shortQ.getHint(), "Proper hint says before 2017.");

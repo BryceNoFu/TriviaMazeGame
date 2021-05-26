@@ -46,7 +46,7 @@ public class QuestionMC extends QuestionGeneral implements Serializable {
     public String toString() {
         StringBuilder str = new StringBuilder();
         str.append("ID: " + getId() + "\n");
-        str.append("Question: " + getQuestion() + "\n");
+        str.append("Question: " + getQuestionStr() + "\n");
         str.append("Choices: " + "\n");
         for (int i = 1; i <= getChoices().length; i++) {
             str.append(i + ": " + getChoices()[i-1] + "\n");
