@@ -10,10 +10,6 @@ import java.io.Serializable;
  */
 public class QuestionSHORT extends QuestionGeneral implements Serializable {
     // fields
-    /**
-     * Serialization for the question.
-     */
-    private static final long serialVersionUID = -1840748633149331132L;
 
     /**
      * String array to store four choices.

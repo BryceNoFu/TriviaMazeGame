@@ -85,11 +85,7 @@ public class QuestionList {
      * @return true if empty, false otherwise
      */
     public boolean isEmpty() {
-        if (questionList.isEmpty()) {
-            return true;
-        } else {
-            return false;
-        }
+        return questionList.isEmpty();
     }
 
     /**

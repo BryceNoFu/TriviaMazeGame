@@ -10,10 +10,6 @@ import java.io.Serializable;
  */
 public class QuestionTF extends QuestionGeneral implements Serializable {
     // fields
-    /**
-     * Serialization for the question.
-     */
-    private static final long serialVersionUID = -230647009084190467L;
 
     /**
      * String array to store two choices (TRUE / FALSE).
