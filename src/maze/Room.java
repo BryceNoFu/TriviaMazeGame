@@ -35,9 +35,6 @@ public class Room {
         }
     }
 
-    /** The position of room. */
-    private Point position;
-
     /** The number of hints in room. */
     private int hints;
 
@@ -51,22 +48,14 @@ public class Room {
         this(0);
     }
 
-    /**
-     * Constructs a room object that takes number of hints.
-     * @param hints the number of hints
-     */
-    public Room(int hints) {
-        this(hints, new Point(0,0));
-    }
 
     /**
      * Constructs a room object that takes number of hints and position of room.
      * @param hints
      * @param position
      */
-    public Room(int hints, Point position) {
+    public Room(int hints) {
         this.hints = hints;
-        position = position;
         this.doors = new int[4];
         this.doors[Door.NORTH.getValue()] = 0;
         this.doors[Door.SOUTH.getValue()] = 0;
@@ -149,13 +138,5 @@ public class Room {
                 return this.doors[Door.EAST.getValue()] == 1;
         }
         return false;
-    }
-
-    /**
-     * Create a string representative of the room object.
-     * @return the string representative of the room object.
-     */
-    public String currentRoomString() {
-        return "Room: " + this.position.getX() + ", " + this.position.getY();
     }
 }

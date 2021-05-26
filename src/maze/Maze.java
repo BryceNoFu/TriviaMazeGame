@@ -39,9 +39,10 @@ public class Maze {
      * @param height the height of maze
      * @param hints the number of hints
      */
-    public Maze(int width, int height, int hints)
+    public Maze(int width, int height, int hints, Point position)
     {
         this.random = new Random(42);
+        this.currentPosition = position;
         this.rooms = new Room[height][width];
         this.questionList = new ArrayList<Question>();
         this.hints = hints;
@@ -55,11 +56,26 @@ public class Maze {
     }
 
     /**
+     * Return the room at current position.
+     * @return The room at current position
+     */
+    public Room getRoom() {
+        return this.rooms[this.currentPosition.getY()][this.currentPosition.getY()];
+    }
+
+    /**
+     * Return the current position.
+     * @return the current position.
+     */
+    public Point getCurrentPosition() {
+        return this.currentPosition;
+    }
+
+    /**
      * Return the list of questions in the maze.
      * @return the list of questions
      */
-    public List<Question> getQuestions()
-    {
+    public List<Question> getQuestions() {
         return this.questionList;
     }
 
