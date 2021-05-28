@@ -508,13 +508,13 @@
                   <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="darkWall" />
-                        <AnchorPane fx:id="northDoor" onMouseClicked="#moveChac" prefHeight="200.0" prefWidth="200.0" styleClass="door" />
+                        <AnchorPane fx:id="NORTH" onMouseClicked="#clickedMove" prefHeight="200.0" prefWidth="200.0" styleClass="door" />
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="darkWall" />
                      </children>
                   </HBox>
                </top>
                <left>
-                  <AnchorPane fx:id="westDoor" onMouseClicked="#moveChac" prefHeight="123.0" prefWidth="99.0" styleClass="door" BorderPane.alignment="CENTER" />
+                  <AnchorPane fx:id="WEST" onMouseClicked="#clickedMove" prefHeight="123.0" prefWidth="99.0" styleClass="door" BorderPane.alignment="CENTER" />
                </left>
                <bottom>
                   <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -525,13 +525,13 @@
                               <String fx:value="darkWall" />
                            </styleClass>
                         </AnchorPane>
-                        <AnchorPane fx:id="southDoor" onMouseClicked="#moveChac" prefHeight="200.0" prefWidth="200.0" styleClass="door" />
+                        <AnchorPane fx:id="SOUTH" onMouseClicked="#clickedMove" prefHeight="200.0" prefWidth="200.0" styleClass="door" />
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="darkWall" />
                      </children>
                   </HBox>
                </bottom>
                <right>
-                  <AnchorPane fx:id="eastDoor" onMouseClicked="#moveChac" prefHeight="100.0" prefWidth="101.0" styleClass="door" BorderPane.alignment="CENTER" />
+                  <AnchorPane fx:id="EAST" onMouseClicked="#clickedMove" prefHeight="100.0" prefWidth="101.0" styleClass="door" BorderPane.alignment="CENTER" />
                </right>
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="character" BorderPane.alignment="CENTER" />

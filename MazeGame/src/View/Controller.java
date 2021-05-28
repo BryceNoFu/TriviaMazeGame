@@ -1,5 +1,6 @@
 package View;
 
+import MazeAndRoom.*;
 import Questions.Question;
 import Questions.QuestionList;
 import javafx.event.ActionEvent;
@@ -18,12 +19,9 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.URL;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -33,24 +31,14 @@ public class Controller implements Initializable {
     private Stage stage;
     private Scene scene;
     private QuestionList question = new QuestionList();
-    private Dialog dialog = new Dialog();
+    private Maze maze = new Maze(5,5,3,new Point(0,1));
+
 
     @FXML
     private AnchorPane fieldScene;
     FileChooser fileChooser = new FileChooser();
     @FXML
     private AnchorPane Move;
-    @FXML
-    private AnchorPane northDoor;
-
-    @FXML
-    private AnchorPane westDoor;
-
-    @FXML
-    private AnchorPane southDoor;
-
-    @FXML
-    private AnchorPane eastDoor;
 
     @FXML
     private Text textQuestion;
@@ -73,9 +61,6 @@ public class Controller implements Initializable {
     private AnchorPane questionPane;
     @FXML
     private BorderPane roomPane;
-
-    @FXML
-    private Button submit;
 
     private Question q;
     private String door;
@@ -139,25 +124,25 @@ public class Controller implements Initializable {
 
 
     @FXML
-    void moveChac(MouseEvent event) throws IOException {
-
+    void clickedMove(MouseEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setHeaderText("The door's locked!!!");
         door = event.getPickResult().getIntersectedNode().getId();
-        if (Move.getTranslateY()==0&&door.equals("northDoor")){
-            alert.show();
-
-        }
-        else if (Move.getTranslateX()==-93&&door.equals("westDoor")){
+        System.out.println("can move:" + maze.canMove(door));
+        System.out.println("door open"+ maze.getRoom().isDoorOpen(Room.Door.NORTH));
+        if (!maze.canMove(door) || (!maze.getRoom().isDoorOpen(Room.Door.WEST)&&door.equals("WEST"))){
             alert.show();
         }
-        else if (Move.getTranslateX()==279&&door.equals("eastDoor")){
+        else if (!maze.canMove(door) || (!maze.getRoom().isDoorOpen(Room.Door.NORTH)&&door.equals("NORTH"))){
             alert.show();
         }
-        else if (Move.getTranslateY()==240&&door.equals("soutDoor")){
+        else if (!maze.canMove(door) || (!maze.getRoom().isDoorOpen(Room.Door.EAST)&&door.equals("EAST"))){
             alert.show();
         }
-        else {
+        else if (!maze.canMove(door) || (!maze.getRoom().isDoorOpen(Room.Door.SOUTH)&&door.equals("SOUTH"))){
+            alert.show();
+        }
+        else{
             roomPane.setVisible(false);
             questionPane.setVisible(true);
             q = question.getQuestion();
@@ -169,7 +154,6 @@ public class Controller implements Initializable {
             Box3.setText(arr[2]);
             Box4.setText(arr[3]);
         }
-
     }
     @FXML
     void saveClicked(ActionEvent event) {
@@ -197,40 +181,44 @@ public class Controller implements Initializable {
         }
         else {
             if (q.isCorrect(toggle.getText())) {
-                roomPane.setVisible(true);
-                southDoor.setVisible(true);
-                westDoor.setVisible(true);
-                northDoor.setVisible(true);
-                eastDoor.setVisible(true);
                 questionPane.setVisible(false);
-                if (door.equals("northDoor")) {
+                if (door.equals("NORTH")) {
+                    //need clean
                     Move.setTranslateY(Move.getTranslateY() - 60);
+                    maze.goUp();
+                    roomPane.setVisible(true);
                 }
-                else if (door.equals("westDoor")){
+                else if (door.equals("WEST")){
                     Move.setTranslateX(Move.getTranslateX()-93);
+                    maze.goLeft();
+                    roomPane.setVisible(true);
                 }
-                else if (door.equals("eastDoor")){
+                else if (door.equals("EAST")){
                     Move.setTranslateX(Move.getTranslateX()+93);
+                    maze.goRight();
+                    roomPane.setVisible(true);
                 }
-                else if (door.equals("southDoor")){
+                else if (door.equals("SOUTH")){
                     Move.setTranslateY(Move.getTranslateY()+60);
+                    maze.goDown();
+                    roomPane.setVisible(true);
                 }
 
             } else {
                 alert2.show();
                 roomPane.setVisible(true);
                 questionPane.setVisible(false);
-                if (door.equals("northDoor")) {
-                    northDoor.setVisible(false);
+                if (door.equals("NORTH")) {
+                    maze.getRoom().closeDoor(Room.Door.NORTH);
                 }
-                else if (door.equals("westDoor")){
-                    westDoor.setVisible(false);
+                else if (door.equals("WEST")){
+                    maze.getRoom().closeDoor(Room.Door.WEST);
                 }
-                else if (door.equals("eastDoor")){
-                    eastDoor.setVisible(false);
+                else if (door.equals("EAST")){
+                    maze.getRoom().closeDoor(Room.Door.EAST);
                 }
-                else if (door.equals("southDoor")){
-                    southDoor.setVisible(false);
+                else if (door.equals("SOUTH")){
+                    maze.getRoom().closeDoor(Room.Door.SOUTH);
                 }
             }
             toggleGroup.getSelectedToggle().setSelected(false);
