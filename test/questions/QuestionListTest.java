@@ -30,14 +30,17 @@ class QuestionListTest {
      * Test for size of the list.
      */
     @Test
-    void getSize() {
+    void testGetSize() {
         assertEquals(100, qList.getSize(), "Default size 100.");
         qList.getQuestion(); // remove a question
         assertEquals(99, qList.getSize(), "99 questions after 1 removal.");
     }
 
+    /**
+     * Test for boolean isEmpty() method.
+     */
     @Test
-    void isEmpty() {
+    void testIsEmpty() {
         assertFalse(qList.isEmpty());
         while (!qList.isEmpty()) {
             qList.getQuestion();
@@ -46,30 +49,35 @@ class QuestionListTest {
         assertTrue(qList.isEmpty(), "Empty after complete removal of questions.");
     }
 
+    /**
+     * Test if getters and fields are set up for the question properly.
+     */
     @Test
     void getQuestion() {
         assertEquals(100, qList.getSize(), "Default size 100, question 1 still in.");
-        Question testQ = QuestionFactory.createQuestion(
-                "mc",
-                1,
-                "The capital of Washington state is what city?",
-                "Tacoma",
-                "Olympia",
-                "Seattle",
-                "Spokane",
-                "Olympia",
-                "Located in the southern Puget Sound region."
-                );
         Question q = qList.getQuestion(); // remove a question
-
-        assertEquals(testQ.getId(), q.getId(), "Should have same id.");
-        assertEquals(testQ.getType(), q.getType(), "Should have same type.");
-        assertEquals(testQ.getQuestionStr(), q.getQuestionStr(), "Should have same question.");
-        assertArrayEquals(testQ.getChoices(), q.getChoices(), "Should have same choices.");
-        assertEquals(testQ.getAnswer(), q.getAnswer(), "Should have same answer.");
-        assertEquals(testQ.getHint(), q.getHint(), "Should have same hint.");
         assertEquals(99, qList.getSize(), "99 questions after question 1 removal.");
     }
 
-    // The randomness of the shuffle() method makes it hard to test, so assume the shuffle method works fine.
+    /**
+     * Test to see if one of the answer choices lead to an actual answer, for multiple
+     * choice and true/false questions.
+     */
+    @Test
+    void testAnswers() {
+        while (!qList.isEmpty()) {
+            Question q = qList.getQuestion();
+            boolean hasAnswer = false;
+            if (q.getType() == Question.Type.SHORT) {
+                continue;
+            } else {
+                for (int i = 0; i < q.getChoices().length; i++) {
+                    if (q.isCorrect(q.getChoices()[i])) {
+                        hasAnswer = true;
+                    }
+                }
+            }
+            assertTrue(hasAnswer);
+        }
+    }
 }
