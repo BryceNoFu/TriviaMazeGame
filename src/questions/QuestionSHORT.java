@@ -17,7 +17,7 @@ public class QuestionSHORT extends QuestionGeneral implements Serializable {
     private String[] choices = {""};
 
     // constructors
-    public QuestionSHORT(int id, String question, String answer, String hint) {
+    QuestionSHORT(int id, String question, String answer, String hint) {
         super(id, question, answer, hint);
         this.setType(Type.SHORT);
     }
