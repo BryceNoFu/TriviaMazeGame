@@ -33,16 +33,19 @@ public class QuestionFactory {
                                    String answer,
                                    String hint) {
 
-        if (type.equals("mc")) { // multiple choice
-            String[] choices = {choice1, choice2, choice3, choice4};
-            return new QuestionMC(id, questionStr, choices, answer, hint);
-        } else if (type.equals("tf")) { // true/false
-            String[] choices = {choice1, choice2};
-            return new QuestionTF(id, questionStr, choices, answer, hint);
-        } else if (type.equals("short")) {
-            return new QuestionSHORT(id, questionStr, answer, hint);
-        } else {
-            return null;
+        switch (type) {
+            case "mc": { // multiple choice
+                final String[] choices = {choice1, choice2, choice3, choice4};
+                return new QuestionMC(id, questionStr, choices, answer, hint);
+            }
+            case "tf": { // true/false
+                final String[] choices = {choice1, choice2};
+                return new QuestionTF(id, questionStr, choices, answer, hint);
+            }
+            case "short": // short answer
+                return new QuestionSHORT(id, questionStr, answer, hint);
+            default:
+                return null;
         }
 
     }

@@ -1,9 +1,6 @@
 package questions;
 
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,7 +19,7 @@ public class QuestionList {
     /**
      * List to store questions into.
      */
-    private List<Question> questionList;
+    private final List<Question> questionList;
 
     // constructors
     /**
@@ -40,7 +37,7 @@ public class QuestionList {
      * into the List, stored as
      */
     private void obtainQuestions() {
-        Connection connection = null;
+        Connection connection;
         try {
             // connection to database
             connection = DriverManager.getConnection("jdbc:sqlite:src/database/questions.db");

@@ -1,22 +1,30 @@
 package questions;
 
-import java.io.Serializable;
-
 /**
  * Question of type multiple choice. Four choices are given to
  * the player to pick from, one of the choices is the correct answer.
  *
  * @author Bryce Fukuda
  */
-public class QuestionMC extends QuestionGeneral implements Serializable {
+public class QuestionMC extends QuestionGeneral {
     // fields
 
     /**
      * String array to store four choices.
      */
-    private String[] choices;
+    private final String[] choices;
 
     // constructors
+
+    /**
+     * Constructor for the multiple choice question class, parameters as question components.
+     *
+     * @param id question id
+     * @param question question string
+     * @param choices four choices
+     * @param answer answer to question
+     * @param hint hint to question
+     */
     QuestionMC(int id, String question, String[] choices, String answer, String hint) {
         super(id, question, answer, hint);
         this.choices = choices;
