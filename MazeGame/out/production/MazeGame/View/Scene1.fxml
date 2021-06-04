@@ -30,7 +30,7 @@
                   <DropShadow />
                </effect>
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToNewGameScene" style="-fx-background-color: Transparent; -fx-text-fill: White; -fx-font-size: 1.5em;" text="New Game">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToField" style="-fx-background-color: Transparent; -fx-text-fill: White; -fx-font-size: 1.5em;" text="New Game">
                      <opaqueInsets>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </opaqueInsets>
@@ -52,7 +52,7 @@
                         <Insets bottom="10.0" />
                      </padding>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: Transparent; -fx-text-fill: White; -fx-font-size: 1.5em;" text="Option">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToOptionPane" style="-fx-background-color: Transparent; -fx-text-fill: White; -fx-font-size: 1.5em;" text="Option">
                      <opaqueInsets>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </opaqueInsets>

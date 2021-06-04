@@ -64,6 +64,9 @@ public class Controller implements Initializable {
 
     @FXML
     private ToggleGroup toggleGroup;
+
+    @FXML
+    private ToggleGroup toggleGroupSound;
     @FXML
     private AnchorPane questionPane;
     @FXML
@@ -122,6 +125,16 @@ public class Controller implements Initializable {
     @FXML
     void switchToField (ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("Field.fxml"));
+        node = (Node) event.getSource();
+        stage = (Stage) node.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void switchToOptionPane (ActionEvent event) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("OptionPane.fxml"));
         node = (Node) event.getSource();
         stage = (Stage) node.getScene().getWindow();
         scene = new Scene(root);
