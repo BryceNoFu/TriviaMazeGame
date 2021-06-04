@@ -3,6 +3,8 @@ package View;
 import MazeAndRoom.*;
 import Questions.Question;
 import Questions.QuestionList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,9 +21,10 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-import java.io.File;
-import java.io.IOException;
+
+import java.io.*;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -32,6 +35,10 @@ public class Controller implements Initializable {
     private Scene scene;
     private QuestionList question = new QuestionList();
     private Maze maze = new Maze(5,5,3,new Point(0,1));
+    private  double charX;
+    private  double charY;
+    private Save save;
+    private ObservableList<Save> list;
 
 
     @FXML
@@ -128,8 +135,6 @@ public class Controller implements Initializable {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setHeaderText("The door's locked!!!");
         door = event.getPickResult().getIntersectedNode().getId();
-        System.out.println("can move:" + maze.canMove(door));
-        System.out.println("door open"+ maze.getRoom().isDoorOpen(Room.Door.NORTH));
         if (!maze.canMove(door) || (!maze.getRoom().isDoorOpen(Room.Door.WEST)&&door.equals("WEST"))){
             alert.show();
         }
@@ -156,25 +161,16 @@ public class Controller implements Initializable {
         }
     }
     @FXML
-    void saveClicked(ActionEvent event) {
-        Window window = fieldScene.getScene().getWindow();
-        fileChooser.setTitle("Save Dialog");
-        fileChooser.setInitialFileName("Maze");
-        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("dat","*.dat"),
-                new FileChooser.ExtensionFilter("text","*.txt"));
-        try{
-            File file = fileChooser.showSaveDialog(window);
-            fileChooser.setInitialDirectory(file.getParentFile());
-        }catch (Exception e){
-
-        }
-    }
-    @FXML
     void submitButton(ActionEvent event) {
+        System.out.println(Move.getTranslateX());
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setHeaderText("Please choose answer!!");
         Alert alert2 = new Alert(Alert.AlertType.WARNING);
         alert2.setHeaderText("Door's locked!");
+        Alert alert3 = new Alert(Alert.AlertType.WARNING);
+        alert3.setHeaderText("Win!!!!");
+        Alert alert4 = new Alert(Alert.AlertType.WARNING);
+        alert4.setHeaderText("Lose!!!!");
         RadioButton toggle = (RadioButton) toggleGroup.getSelectedToggle();
         if (toggleGroup.getSelectedToggle()==null&&questionPane.isVisible()==false){
             alert.show();
@@ -203,6 +199,9 @@ public class Controller implements Initializable {
                     maze.goDown();
                     roomPane.setVisible(true);
                 }
+                if (maze.checkWin()){
+                    alert3.show();
+                }
 
             } else {
                 alert2.show();
@@ -220,9 +219,67 @@ public class Controller implements Initializable {
                 else if (door.equals("SOUTH")){
                     maze.getRoom().closeDoor(Room.Door.SOUTH);
                 }
+                if (maze.checkLose()){
+                    alert4.show();
+                }
             }
             toggleGroup.getSelectedToggle().setSelected(false);
         }
+    }
+    @FXML
+    void saveClicked(ActionEvent event) {
+        Window window = fieldScene.getScene().getWindow();
+        fileChooser.setTitle("Save Dialog");
+        fileChooser.setInitialFileName("Maze");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("dat","*.dat"),
+                new FileChooser.ExtensionFilter("binary","*.bin"));
+        try{
+            File file = fileChooser.showSaveDialog(window);
+            fileChooser.setInitialDirectory(file.getParentFile());
+            String path = file.getAbsolutePath();
+            FileOutputStream newFile = new FileOutputStream(path);
+            ObjectOutputStream out = new ObjectOutputStream(newFile);
+            save = new Save(maze,charX,charY,question);
+            out.writeObject(save);
+        }catch (Exception e){
+
+        }
+    }
+
+    @FXML
+    void loadClicked(ActionEvent event) {
+        Window window = fieldScene.getScene().getWindow();
+        fileChooser.setTitle("Load Dialog");
+        fileChooser.setInitialFileName("Maze");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("dat","*.dat"),
+                new FileChooser.ExtensionFilter("binary","*.bin"));
+        try{
+            File file = fileChooser.showOpenDialog(window);
+            fileChooser.setInitialDirectory(file.getParentFile());
+            String path = file.getAbsolutePath();
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream(path));
+            list = FXCollections.observableList((List<Save>) in.readObject());
+            save = list.get(0);
+            //save = (Save) in.readObject();
+            setCharX(save.getCharX());
+            setCharY(save.getCharY());
+            question = save.getQuestion();
+            maze.setPosition(2,2);
+        }catch (Exception e){
+
+        }
+    }
+    private void setCharY (double y){
+        Move.setTranslateY(Move.getTranslateY()+y);
+    }
+    private void setCharX (double x){
+        Move.setTranslateX(Move.getTranslateX()+x);
+    }
+    private double getCharX() {
+        return this.charX = Move.getTranslateX();
+    }
+    private double getCharY() {
+        return this.charY = Move.getTranslateY();
     }
 
     @Override

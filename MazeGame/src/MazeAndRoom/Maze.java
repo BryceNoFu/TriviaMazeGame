@@ -34,6 +34,7 @@ public class Maze {
     private List<Question> questionList;
 
 
+
     /**
      * Construct a maze object that takes width, height and number of hints.
      * @param width the width of maze
@@ -251,7 +252,6 @@ public class Maze {
         return "Maze by " + width + "x" + height;
     }
     public boolean canMove (String str){
-        System.out.println(this.currentPosition.getY());
         if (str.equals("WEST")){
             return this.currentPosition.getY()-1>=0;
         }
@@ -265,5 +265,18 @@ public class Maze {
             return this.currentPosition.getY()+1<this.width;
         }
         else return false;
+    }
+    public void setPosition (int x , int y){
+        this.currentPosition.setX(x);
+        this.currentPosition.setY(y);
+    }
+    public boolean checkWin (){
+        return this.currentPosition.getX() == 4 && this.currentPosition.getY() == 3;
+    }
+    public boolean checkLose (){
+        return ((!canMove("WEST")||!this.getRoom().isDoorOpen(Room.Door.WEST))
+                &&(!canMove("NORTH")||!this.getRoom().isDoorOpen(Room.Door.NORTH))
+                &&(!canMove("EAST")||!this.getRoom().isDoorOpen(Room.Door.EAST))
+                &&(!canMove("SOUTH")||!this.getRoom().isDoorOpen(Room.Door.SOUTH)));
     }
 }
