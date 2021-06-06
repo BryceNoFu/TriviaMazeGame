@@ -255,9 +255,7 @@ public class Controller implements Initializable {
             question = store.getQuestions();
             ObjectInputStream in1 = new ObjectInputStream(new FileInputStream(new File("maze.bin")));
             List<Double> list = (List<Double>) in1.readObject();
-            Move = new AnchorPane();
-            Move.setTranslateX(0);
-            Move.setTranslateY(0);
+            Move = (AnchorPane) scene.lookup("#Move");
             Move.setTranslateX(Move.getTranslateX() + list.get(0));
             Move.setTranslateY(Move.getTranslateY() + list.get(1));
             mediaPlayer.seek(Duration.ZERO);
