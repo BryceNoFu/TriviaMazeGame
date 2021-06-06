@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="308.0" prefWidth="250.0" styleClass="door" stylesheets="@Pane.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Controller">
-   <children>
-      <Text layoutX="5.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: White; -fx-font-family: quicksand; -fx-font-size: 2em;" text="The Door is locked!!!" wrappingWidth="229.00000339746475">
-         <effect>
-            <DropShadow />
-         </effect>
-      </Text>
-    <Button fx:id="okButton" cancelButton="true" layoutX="106.0" layoutY="148.0" mnemonicParsing="false" style="-fx-background-radius: 5em; -fx-min-height: 3em; -fx-max-height: 3em; -fx-max-width: 3em; -fx-min-width: 3em;" text="OK" />
-   </children>
-</AnchorPane>
+<DialogPane prefHeight="130.0" prefWidth="253.0" styleClass="ground" stylesheets="@Pane.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Controller">
+   <cursor>
+      <Cursor fx:constant="V_RESIZE" />
+   </cursor>
+   <header>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="134.0" prefWidth="221.0" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: White; -fx-font-family: quicksand; -fx-font-size: 2.5em;" text="You Won!!!">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Text>
+                  <HBox alignment="BOTTOM_CENTER" prefHeight="0.0" prefWidth="418.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="PlayAgain" cancelButton="true" mnemonicParsing="false" onAction="#playAgain" styleClass="dark-blue" stylesheets="@Pane.css" text="What's Next ?" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </header>
+   <graphic>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: Transparent;" stylesheets="@coding.css" />
+   </graphic>
+</DialogPane>

@@ -22,7 +22,7 @@
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                     </padding>
                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder; -fx-font-size: 50; -fx-fill: White;" text="Trivial Maze Game">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder; -fx-font-size: 50; -fx-fill: White;" text="Trivia Maze Game">
                             <effect>
                                 <SepiaTone />
                             </effect>
@@ -60,7 +60,7 @@
                               <SepiaTone />
                            </effect>
                         </Text>
-                        <RadioButton mnemonicParsing="false" style="-fx-background-color: Transparent; -fx-alignment: Center; -fx-background-size: 1.5em; -fx-text-fill: white; -fx-font-weight: bolder; -fx-font-family: quicksand;" text="On">
+                        <RadioButton mnemonicParsing="false" selected="true" style="-fx-background-color: Transparent; -fx-alignment: Center; -fx-background-size: 1.5em; -fx-text-fill: white; -fx-font-weight: bolder; -fx-font-family: quicksand;" text="On">
                            <effect>
                               <SepiaTone />
                            </effect>

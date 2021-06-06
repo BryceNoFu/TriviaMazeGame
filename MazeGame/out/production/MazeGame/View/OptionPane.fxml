@@ -60,7 +60,7 @@
                               <SepiaTone />
                            </effect>
                         </Text>
-                        <RadioButton mnemonicParsing="false" style="-fx-background-color: Transparent; -fx-alignment: Center; -fx-background-size: 1.5em; -fx-text-fill: white; -fx-font-weight: bolder; -fx-font-family: quicksand;" text="On">
+                        <RadioButton mnemonicParsing="false" selected="true" style="-fx-background-color: Transparent; -fx-alignment: Center; -fx-background-size: 1.5em; -fx-text-fill: white; -fx-font-weight: bolder; -fx-font-family: quicksand;" text="On">
                            <effect>
                               <SepiaTone />
                            </effect>

@@ -6,6 +6,7 @@ import Questions.QuestionList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,6 +17,8 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.FileChooser;
@@ -25,6 +28,7 @@ import javafx.stage.Window;
 import java.io.*;
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -39,6 +43,11 @@ public class Controller implements Initializable {
     private  double charY;
     private Save save;
     private ObservableList<Save> list;
+    private Media media;
+    private AudioClip audioClip;
+    private final double X_AMOUNT = 93;
+    private final double Y_AMOUNT = 60;
+
 
 
     @FXML
@@ -64,13 +73,11 @@ public class Controller implements Initializable {
 
     @FXML
     private ToggleGroup toggleGroup;
-
-    @FXML
-    private ToggleGroup toggleGroupSound;
     @FXML
     private AnchorPane questionPane;
     @FXML
     private BorderPane roomPane;
+
 
     private Question q;
     private String door;
@@ -92,7 +99,7 @@ public class Controller implements Initializable {
     }
     @FXML
     void quit(MouseEvent event) {
-        System.exit(0);
+        ((Node)(event.getSource())).getScene().getWindow().hide();
     }
     @FXML
     void switchToScene1 (ActionEvent event) throws IOException{
@@ -141,6 +148,15 @@ public class Controller implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    void switchToNextPane (ActionEvent event) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("TestDialog.fxml"));
+        node = (Node) event.getSource();
+        stage = (Stage) node.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
 
     @FXML
@@ -173,70 +189,83 @@ public class Controller implements Initializable {
             Box4.setText(arr[3]);
         }
     }
+    private void createAlert(ActionEvent event){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        if (maze.checkWin()) {
+            alert.setTitle("You Win!!!!");
+        }else if (maze.checkLose()){
+            alert.setTitle("You Lose!!!!");
+        }
+        ButtonType playAgainButton = new ButtonType("Play Again");
+        ButtonType mainMenuButton = new ButtonType("Main Menu", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+        alert.getButtonTypes().setAll(playAgainButton, mainMenuButton);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == playAgainButton){
+            Move.setTranslateX(0);
+            Move.setTranslateY(0);
+            maze = new Maze(5,5,0,new Point(0,1));
+            question = new QuestionList();
+        } else {
+            try {
+                switchToScene1(event);
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+    }
+    @FXML
+    void cheatButton(ActionEvent event){
+        if (maze.canMove(door)) {
+            moveCha(door);
+        }
+        if (maze.checkWin()){
+            createAlert(event);
+        }
+    }
     @FXML
     void submitButton(ActionEvent event) {
-        System.out.println(Move.getTranslateX());
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setHeaderText("Please choose answer!!");
         Alert alert2 = new Alert(Alert.AlertType.WARNING);
         alert2.setHeaderText("Door's locked!");
-        Alert alert3 = new Alert(Alert.AlertType.WARNING);
-        alert3.setHeaderText("Win!!!!");
         Alert alert4 = new Alert(Alert.AlertType.WARNING);
         alert4.setHeaderText("Lose!!!!");
         RadioButton toggle = (RadioButton) toggleGroup.getSelectedToggle();
-        if (toggleGroup.getSelectedToggle()==null&&questionPane.isVisible()==false){
-            alert.show();
+        if (toggleGroup.getSelectedToggle()==null&&questionPane.isVisible()==true){
+            alert.showAndWait();
         }
         else {
             if (q.isCorrect(toggle.getText())) {
                 questionPane.setVisible(false);
-                if (door.equals("NORTH")) {
-                    //need clean
-                    Move.setTranslateY(Move.getTranslateY() - 60);
-                    maze.goUp();
-                    roomPane.setVisible(true);
-                }
-                else if (door.equals("WEST")){
-                    Move.setTranslateX(Move.getTranslateX()-93);
-                    maze.goLeft();
-                    roomPane.setVisible(true);
-                }
-                else if (door.equals("EAST")){
-                    Move.setTranslateX(Move.getTranslateX()+93);
-                    maze.goRight();
-                    roomPane.setVisible(true);
-                }
-                else if (door.equals("SOUTH")){
-                    Move.setTranslateY(Move.getTranslateY()+60);
-                    maze.goDown();
-                    roomPane.setVisible(true);
-                }
+                moveCha(door);
                 if (maze.checkWin()){
-                    alert3.show();
+                    createAlert(event);
                 }
-
             } else {
-                alert2.show();
                 roomPane.setVisible(true);
                 questionPane.setVisible(false);
-                if (door.equals("NORTH")) {
-                    maze.getRoom().closeDoor(Room.Door.NORTH);
-                }
-                else if (door.equals("WEST")){
-                    maze.getRoom().closeDoor(Room.Door.WEST);
-                }
-                else if (door.equals("EAST")){
-                    maze.getRoom().closeDoor(Room.Door.EAST);
-                }
-                else if (door.equals("SOUTH")){
-                    maze.getRoom().closeDoor(Room.Door.SOUTH);
-                }
+                closeTheDoor(door);
                 if (maze.checkLose()){
-                    alert4.show();
-                }
+                    createAlert(event);
+                }else alert2.showAndWait();
             }
             toggleGroup.getSelectedToggle().setSelected(false);
+        }
+    }
+    private void closeTheDoor (String string){
+        if (string.equals("NORTH")) {
+            maze.getRoom().closeDoor(Room.Door.NORTH);
+        }
+        else if (string.equals("WEST")){
+            maze.getRoom().closeDoor(Room.Door.WEST);
+        }
+        else if (string.equals("EAST")){
+            maze.getRoom().closeDoor(Room.Door.EAST);
+        }
+        else if (string.equals("SOUTH")){
+            maze.getRoom().closeDoor(Room.Door.SOUTH);
         }
     }
     @FXML
@@ -282,21 +311,55 @@ public class Controller implements Initializable {
 
         }
     }
+
+    @FXML
+    void reset(ActionEvent event) {
+        Move.setTranslateX(0);
+        Move.setTranslateY(0);
+        maze = new Maze(5,5,0,new Point(0,1));
+        question = new QuestionList();
+    }
+    private void play (){
+        String file = new File("src/View/Music/peritune-spook4.mp3").getAbsolutePath();
+        media = new Media(new File(file).toURI().toString());
+        audioClip = new AudioClip(media.getSource());
+        audioClip.play(2.0);
+        audioClip.setVolume(2.0);
+        System.out.println(audioClip.isPlaying());
+    }
     private void setCharY (double y){
         Move.setTranslateY(Move.getTranslateY()+y);
     }
     private void setCharX (double x){
         Move.setTranslateX(Move.getTranslateX()+x);
     }
-    private double getCharX() {
-        return this.charX = Move.getTranslateX();
-    }
-    private double getCharY() {
-        return this.charY = Move.getTranslateY();
+
+    private void moveCha(String string){
+        if (string.equals("NORTH")) {
+            Move.setTranslateY(Move.getTranslateY() - Y_AMOUNT);
+            maze.goUp();
+            roomPane.setVisible(true);
+        }
+        else if (string.equals("WEST")){
+            Move.setTranslateX(Move.getTranslateX()-X_AMOUNT);
+            maze.goLeft();
+            roomPane.setVisible(true);
+        }
+        else if (string.equals("EAST")){
+            Move.setTranslateX(Move.getTranslateX()+X_AMOUNT);
+            maze.goRight();
+            roomPane.setVisible(true);
+        }
+        else {
+            Move.setTranslateY(Move.getTranslateY()+Y_AMOUNT);
+            maze.goDown();
+            roomPane.setVisible(true);
+        }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         fileChooser.setInitialDirectory(new File("/Users/thanhtien7596/Desktop/TCSS 360/TriviaMazeGame/MazeGame"));
+//        play();
     }
 }

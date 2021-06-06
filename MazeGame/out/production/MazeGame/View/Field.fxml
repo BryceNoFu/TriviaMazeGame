@@ -483,7 +483,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </opaqueInsets>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: Transparent; -fx-text-fill: White; -fx-font-size: 1.5em;" text="Option" textAlignment="CENTER">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#reset" style="-fx-background-color: Transparent; -fx-text-fill: White; -fx-font-size: 1.5em;" text="Reset" textAlignment="CENTER">
                <effect>
                   <SepiaTone level="0.25" />
                </effect>
@@ -554,6 +554,7 @@
                   <RadioButton fx:id="Box4" mnemonicParsing="false" prefHeight="30.0" prefWidth="452.0" style="-fx-text-fill: white; -fx-font-size: 1em;" toggleGroup="$toggleGroup" wrapText="true" VBox.vgrow="ALWAYS" />
                   <ButtonBar prefHeight="40.0" prefWidth="200.0">
                     <buttons>
+                        <Button mnemonicParsing="false" onAction="#cheatButton" text="Cheat" />
                       <Button fx:id="submit" mnemonicParsing="false" onAction="#submitButton" text="Submit" />
                     </buttons>
                      <VBox.margin>
