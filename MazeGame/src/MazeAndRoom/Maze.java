@@ -1,17 +1,17 @@
 package MazeAndRoom;
 
-import java.io.Serial;
-import java.io.Serializable;
+import Questions.Question;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 /**
  * Creates a Maze object containing nxn rooms.
  * @author Natalie Nguyen Hong
  * @version Spring 2021
  */
-public class Maze implements Serializable {
+public class Maze {
 
-    @Serial
-    private static final long serialVersionUID = 1992197704689681978L;
     /** An array of rooms in the maze. */
     private Room[][] rooms;
 
@@ -27,9 +27,13 @@ public class Maze implements Serializable {
     /** The number of hints of the maze. */
     private int hints;
 
-    public Maze() {
-        this(0,0,0);
-    }
+    /** The random object. */
+    private static Random random;
+
+    /** The list of questions in the maze. */
+    private List<Question> questionList;
+
+
 
     /**
      * Construct a maze object that takes width, height and number of hints.
@@ -39,8 +43,10 @@ public class Maze implements Serializable {
      */
     public Maze(int width, int height, int hints)
     {
+        this.random = new Random(42);
         this.currentPosition = null;
         this.rooms = new Room[height][width];
+        this.questionList = new ArrayList<Question>();
         this.hints = hints;
         this.width = width;
         this.height = height;
@@ -61,8 +67,10 @@ public class Maze implements Serializable {
      */
     public Maze(int width, int height, int hints, Point position)
     {
+        this.random = new Random(42);
         this.currentPosition = position;
         this.rooms = new Room[height][width];
+        this.questionList = new ArrayList<Question>();
         this.hints = hints;
         this.width = width;
         this.height = height;
@@ -71,6 +79,10 @@ public class Maze implements Serializable {
                 rooms[i][j] = new Room();
             }
         }
+    }
+
+    public Maze() {
+
     }
 
     /**
@@ -122,13 +134,57 @@ public class Maze implements Serializable {
     }
 
     /**
-     * Set current position.
-     * @param x the x-coordinate
-     * @param y th y-coordinate
+     * Return the list of questions in the maze.
+     * @return the list of questions
      */
-    public void setPosition (int x , int y){
-        this.currentPosition.setX(x);
-        this.currentPosition.setY(y);
+    public List<Question> getQuestions() {
+        return this.questionList;
+    }
+
+    /**
+     * Add questions into the question list of maze.
+     * @param question the question
+     */
+    public void attachQuestion(Question question)
+    {
+        // assume all questions are different
+        this.questionList.add(question);
+    }
+
+    /**
+     * Add question from a list into the question list of maze.
+     * @param questions the question list
+     */
+    public void attachQuestions(List<Question> questions)
+    {
+        this.questionList.addAll(questions);
+    }
+
+    /**
+     * Remove question from the question list of maze.
+     * @param question the question
+     */
+    public void detachQuestion(Question question)
+    {
+        this.questionList.remove(question);
+    }
+
+    /**
+     * Clear all questions in the question list of maze.
+     */
+    public void clearQuestions()
+    {
+        this.questionList.clear();
+    }
+
+    /**
+     * Get a random question in the question list of maze.
+     * @return the random question
+     */
+    public Question getRandomQuestion()
+    {
+        int arbitaryIndex = this.random.nextInt(this.questionList.size());
+        return this.questionList.get(arbitaryIndex);
     }
 
     /**
@@ -193,50 +249,38 @@ public class Maze implements Serializable {
     }
 
     /**
-     * Returns true if the current position is out of bound. Otherwise, false.
-     * @param string the direction
-     * @return true if the current position is out of bound. Otherwise, false.
-     */
-    public boolean canMove (String string){
-        if (string.equals("WEST")){
-            return this.currentPosition.getY()-1>=0;
-        }
-        else if(string.equals("NORTH")){
-            return this.currentPosition.getX()-1 >=0;
-        }
-        else if(string.equals("SOUTH")){
-            return this.currentPosition.getX()+1<this.height;
-        }
-        else if(string.equals("EAST")){
-            return this.currentPosition.getY()+1<this.width;
-        }
-        else return false;
-    }
-
-    /**
-     * Returns true if the current position is at the exit. Otherwise, false.
-     * @return true if the current position is at the exit. Otherwise, false.
-     */
-    public boolean checkWin (){
-        return this.currentPosition.getX() == this.getHeight()-1 && this.currentPosition.getY() == getWidth()-2;
-    }
-
-    /**
-     * Returns true if all doors are closed and canMove() is false. Otherwise, false.
-     * @return true if all doors are closed and canMove() is false. Otherwise, false.
-     */
-    public boolean checkLose (){
-        return ((!canMove("WEST")||!this.getRoom().isDoorOpen(Room.Door.WEST))
-                &&(!canMove("NORTH")||!this.getRoom().isDoorOpen(Room.Door.NORTH))
-                &&(!canMove("EAST")||!this.getRoom().isDoorOpen(Room.Door.EAST))
-                &&(!canMove("SOUTH")||!this.getRoom().isDoorOpen(Room.Door.SOUTH)));
-    }
-
-    /**
      * Create a string representative of the maze object.
      * @return the string representative of the maze object
      */
     public String toString() {
         return "Maze by " + width + "x" + height;
+    }
+    public boolean canMove (String str){
+        if (str.equals("WEST")){
+            return this.currentPosition.getY()-1>=0;
+        }
+        else if(str.equals("NORTH")){
+            return this.currentPosition.getX()-1 >=0;
+        }
+        else if(str.equals("SOUTH")){
+            return this.currentPosition.getX()+1<this.height;
+        }
+        else if(str.equals("EAST")){
+            return this.currentPosition.getY()+1<this.width;
+        }
+        else return false;
+    }
+    public void setPosition (int x , int y){
+        this.currentPosition.setX(x);
+        this.currentPosition.setY(y);
+    }
+    public boolean checkWin (){
+        return this.currentPosition.getX() == 4 && this.currentPosition.getY() == 3;
+    }
+    public boolean checkLose (){
+        return ((!canMove("WEST")||!this.getRoom().isDoorOpen(Room.Door.WEST))
+                &&(!canMove("NORTH")||!this.getRoom().isDoorOpen(Room.Door.NORTH))
+                &&(!canMove("EAST")||!this.getRoom().isDoorOpen(Room.Door.EAST))
+                &&(!canMove("SOUTH")||!this.getRoom().isDoorOpen(Room.Door.SOUTH)));
     }
 }

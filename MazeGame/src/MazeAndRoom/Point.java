@@ -1,16 +1,11 @@
 package MazeAndRoom;
 
-import java.io.Serial;
-import java.io.Serializable;
-
 /**
  * Creates a Point object.
  * @author Natalie Nguyen Hong
  * @version Spring 2021
  */
-public class Point implements Serializable {
-    @Serial
-    private static final long serialVersionUID = -2674024240025061690L;
+public class Point {
     /** The x-coordinate of point. */
     private int xCoordinate;
 

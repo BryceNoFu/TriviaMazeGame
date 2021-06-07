@@ -1,17 +1,11 @@
 package MazeAndRoom;
 
-import java.io.Serial;
-import java.io.Serializable;
-
 /**
  * Creates a Room object containing 2-4 doors.
  * @author Natalie Nguyen Hong
  * @version Spring 2021
  */
-public class Room implements Serializable {
-
-    @Serial
-    private static final long serialVersionUID = 2138616414160799691L;
+public class Room {
 
     /**
      * Creates a Door enum and its value.
@@ -26,7 +20,7 @@ public class Room implements Serializable {
 
         /**
          *  Constructs a door object that takes a value.
-         * @param value the value of door
+         * @param value
          */
         Door(int value) {
             this.value = value;
@@ -45,7 +39,7 @@ public class Room implements Serializable {
     private int hints;
 
     /** The doors of room. */
-    private final int[] doors;
+    private int[] doors;
 
     /**
      * Constructs an empty room.
@@ -57,7 +51,7 @@ public class Room implements Serializable {
 
     /**
      * Constructs a room object that takes number of hints and position of room.
-     * @param hints the number of hints
+     * @param hints
      */
     public Room(int hints) {
         this.hints = hints;
@@ -90,10 +84,18 @@ public class Room implements Serializable {
      */
     public void openDoor(Door door) {
         switch (door) {
-            case NORTH -> this.doors[Door.NORTH.getValue()] = 1;
-            case SOUTH -> this.doors[Door.SOUTH.getValue()] = 1;
-            case WEST -> this.doors[Door.WEST.getValue()] = 1;
-            case EAST -> this.doors[Door.EAST.getValue()] = 1;
+            case NORTH:
+                this.doors[Door.NORTH.getValue()] = 1;
+                break;
+            case SOUTH:
+                this.doors[Door.SOUTH.getValue()] = 1;
+                break;
+            case WEST:
+                this.doors[Door.WEST.getValue()] = 1;
+                break;
+            case EAST:
+                this.doors[Door.EAST.getValue()] = 1;
+                break;
         }
     }
 
@@ -103,10 +105,18 @@ public class Room implements Serializable {
      */
     public void closeDoor(Door door) {
         switch (door) {
-            case NORTH -> this.doors[Door.NORTH.getValue()] = 0;
-            case SOUTH -> this.doors[Door.SOUTH.getValue()] = 0;
-            case WEST -> this.doors[Door.WEST.getValue()] = 0;
-            case EAST -> this.doors[Door.EAST.getValue()] = 0;
+            case NORTH:
+                this.doors[Door.NORTH.getValue()] = 0;
+                break;
+            case SOUTH:
+                this.doors[Door.SOUTH.getValue()] = 0;
+                break;
+            case WEST:
+                this.doors[Door.WEST.getValue()] = 0;
+                break;
+            case EAST:
+                this.doors[Door.EAST.getValue()] = 0;
+                break;
         }
     }
 
