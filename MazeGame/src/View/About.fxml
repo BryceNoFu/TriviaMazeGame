@@ -19,7 +19,7 @@
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                     </padding>
                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder; -fx-font-size: 50; -fx-fill: White;" text="Trivia Maze Game">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder; -fx-font-size: 50; -fx-fill: White;" text="Trivial Maze Game">
                             <effect>
                                 <SepiaTone />
                             </effect>
