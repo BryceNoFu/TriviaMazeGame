@@ -21,20 +21,20 @@
       <AnchorPane layoutX="8.0" layoutY="14.0" prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="235.0" AnchorPane.topAnchor="0.0">
          <children>
             <GridPane layoutX="14.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <columnConstraints>
+              <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
                <children>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
                      <top>
@@ -475,7 +475,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </opaqueInsets>
             </Button>
-            <Button fx:id="load" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#loadClicked" style="-fx-background-color: Transparent; -fx-text-fill: White; -fx-font-size: 1.5em;" text="Load" textAlignment="CENTER">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#loadClicked" style="-fx-background-color: Transparent; -fx-text-fill: White; -fx-font-size: 1.5em;" text="Load" textAlignment="CENTER">
                <effect>
                   <SepiaTone level="0.25" />
                </effect>
@@ -483,7 +483,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </opaqueInsets>
             </Button>
-            <Button fx:id="reset" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#reset" style="-fx-background-color: Transparent; -fx-text-fill: White; -fx-font-size: 1.5em;" text="Reset" textAlignment="CENTER">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#reset" style="-fx-background-color: Transparent; -fx-text-fill: White; -fx-font-size: 1.5em;" text="Reset" textAlignment="CENTER">
                <effect>
                   <SepiaTone level="0.25" />
                </effect>
@@ -553,9 +553,10 @@
                   <RadioButton fx:id="Box3" mnemonicParsing="false" prefHeight="30.0" prefWidth="409.0" style="-fx-text-fill: white; -fx-font-size: 1em;" toggleGroup="$toggleGroup" wrapText="true" VBox.vgrow="ALWAYS" />
                   <RadioButton fx:id="Box4" mnemonicParsing="false" prefHeight="30.0" prefWidth="452.0" style="-fx-text-fill: white; -fx-font-size: 1em;" toggleGroup="$toggleGroup" wrapText="true" VBox.vgrow="ALWAYS" />
                   <ButtonBar prefHeight="40.0" prefWidth="200.0">
-                     <buttons>
-                        <Button fx:id="submit" mnemonicParsing="false" onAction="#submitButton" text="Submit" />
-                     </buttons>
+                    <buttons>
+                        <Button mnemonicParsing="false" onAction="#cheatButton" text="Cheat" />
+                      <Button fx:id="submit" mnemonicParsing="false" onAction="#submitButton" text="Submit" />
+                    </buttons>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
