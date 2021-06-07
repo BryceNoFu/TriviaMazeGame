@@ -1,17 +1,12 @@
 package Questions;
 
-import java.io.Serial;
-import java.io.Serializable;
-
 /**
  * Abstract class for question classes, containing the minimum
  * required methods that will be implemented for these questions.
  *
  * @author Bryce Fukuda
  */
-public abstract class QuestionGeneral implements Question, Serializable {
-    @Serial
-    private static final long serialVersionUID = 6763165130668758467L;
+public abstract class QuestionGeneral implements Question {
     // fields
     /**
      * Question enum type.

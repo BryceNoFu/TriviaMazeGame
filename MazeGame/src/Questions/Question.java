@@ -1,7 +1,5 @@
 package Questions;
 
-import java.io.Serializable;
-
 /**
  * Abstract class for question classes. Required methods are getters for
  * the question's id, actual question, answer, hint, and check if the
@@ -9,7 +7,7 @@ import java.io.Serializable;
  *
  * @author Bryce Fukuda
  */
-public interface Question extends Serializable {
+public interface Question {
     /**
      * Enum constants to state the type of question.
      */
@@ -46,6 +44,9 @@ public interface Question extends Serializable {
      * @return array of answer choices
      */
     String[] getChoices();
+
+
+
 
     /**
      * Getter method for answer.
