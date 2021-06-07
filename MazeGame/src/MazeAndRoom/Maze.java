@@ -2,6 +2,10 @@ package MazeAndRoom;
 
 import java.io.Serial;
 import java.io.Serializable;
+import Questions.Question;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 /**
  * Creates a Maze object containing nxn rooms.
@@ -27,6 +31,13 @@ public class Maze implements Serializable {
     /** The number of hints of the maze. */
     private int hints;
 
+    /** The random object. */
+    private static Random random;
+
+    /** The list of questions in the maze. */
+    private List<Question> questionList;
+
+
     public Maze() {
         this(0,0,0);
     }
@@ -39,8 +50,10 @@ public class Maze implements Serializable {
      */
     public Maze(int width, int height, int hints)
     {
+        this.random = new Random(42);
         this.currentPosition = null;
         this.rooms = new Room[height][width];
+        this.questionList = new ArrayList<Question>();
         this.hints = hints;
         this.width = width;
         this.height = height;
@@ -61,8 +74,10 @@ public class Maze implements Serializable {
      */
     public Maze(int width, int height, int hints, Point position)
     {
+        this.random = new Random(42);
         this.currentPosition = position;
         this.rooms = new Room[height][width];
+        this.questionList = new ArrayList<Question>();
         this.hints = hints;
         this.width = width;
         this.height = height;
@@ -122,11 +137,66 @@ public class Maze implements Serializable {
     }
 
     /**
+     * Return the list of questions in the maze.
+     * @return the list of questions
+     */
+    public List<Question> getQuestions() {
+        return this.questionList;
+    }
+
+    /**
+     * Add questions into the question list of maze.
+     * @param question the question
+     */
+    public void attachQuestion(Question question)
+    {
+        // assume all questions are different
+        this.questionList.add(question);
+    }
+
+    /**
+     * Add question from a list into the question list of maze.
+     * @param questions the question list
+     */
+    public void attachQuestions(List<Question> questions)
+    {
+        this.questionList.addAll(questions);
+    }
+
+    /**
+     * Remove question from the question list of maze.
+     * @param question the question
+     */
+    public void detachQuestion(Question question)
+    {
+        this.questionList.remove(question);
+    }
+
+    /**
+     * Clear all questions in the question list of maze.
+     */
+    public void clearQuestions()
+    {
+        this.questionList.clear();
+    }
+
+    /**
+     * Get a random question in the question list of maze.
+     * @return the random question
+     */
+    public Question getRandomQuestion()
+    {
+        int arbitaryIndex = this.random.nextInt(this.questionList.size());
+        return this.questionList.get(arbitaryIndex);
+
+    }
+
+    /**
      * Set current position.
      * @param x the x-coordinate
      * @param y th y-coordinate
      */
-    public void setPosition (int x , int y){
+    public void setPosition (int x , int y) {
         this.currentPosition.setX(x);
         this.currentPosition.setY(y);
     }
