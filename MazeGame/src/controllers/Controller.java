@@ -565,6 +565,7 @@ public class Controller implements Initializable {
     /**
      * Set the pane visible or not.
      * @param bool the boolean value
+     * @param scene the loaded scene
      */
     private void setVisiblePane(boolean bool, Scene scene) {
         if (q.getType().toString().equals("MC")) {
