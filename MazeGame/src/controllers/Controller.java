@@ -568,18 +568,12 @@ public class Controller implements Initializable {
      * @param scene the loaded scene
      */
     private void setVisiblePane(boolean bool, Scene scene) {
-        if (q.getType().toString().equals("MC")) {
-            questionPane = (AnchorPane) scene.lookup("#questionPane");
-            questionPane.setVisible(false);
-        }
-        else if (q.getType().toString().equals("TF")) {
-            TFQuestionPane = (AnchorPane) scene.lookup("#TFQuestionPane");
-            TFQuestionPane.setVisible(false);
-        }
-        else if (q.getType().toString().equals("SHORT")){
-            ShortQuestionPane = (AnchorPane) scene.lookup("#ShortQuestionPane");
-            ShortQuestionPane.setVisible(false);
-        }
+        questionPane = (AnchorPane) scene.lookup("#questionPane");
+        questionPane.setVisible(bool);
+        TFQuestionPane = (AnchorPane) scene.lookup("#TFQuestionPane");
+        TFQuestionPane.setVisible(bool);
+        ShortQuestionPane = (AnchorPane) scene.lookup("#ShortQuestionPane");
+        ShortQuestionPane.setVisible(bool);
     }
     /**
      * A method that allows the user to save game.

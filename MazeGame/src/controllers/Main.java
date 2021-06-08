@@ -32,7 +32,7 @@ public class Main extends Application {
         String file = new File("src/resources/Monkeys-Spinning-Monkeys.mp3").getAbsolutePath();
         Media media = new Media(new File(file).toURI().toString());
         AudioClip audioClip = new AudioClip(media.getSource());
-        audioClip.play();
+        audioClip.play(0.05);
         primaryStage.setScene(scene);
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.show();
