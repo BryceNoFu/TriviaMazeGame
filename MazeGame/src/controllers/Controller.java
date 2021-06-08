@@ -105,11 +105,11 @@ public class Controller implements Initializable {
     @FXML
     private ToggleGroup toggleGroup;
 
-    /** The AnchorPane object for question pane. */
+    /** The AnchorPane for question pane. */
     @FXML
     private AnchorPane questionPane;
 
-    /** The AnchorPane object for room pane. */
+    /** The AnchorPane for room pane. */
     @FXML
     private BorderPane roomPane;
 
@@ -119,49 +119,68 @@ public class Controller implements Initializable {
     /** The door direction. */
     private String door;
 
+    /** The AnchorPane for True/False question pane. */
     @FXML
     private AnchorPane TFQuestionPane;
 
+    /** The text box for True/False question. */
     @FXML
     private Text TFTextQuestion;
 
+    /** The RadioButton for True answer. */
     @FXML
     private RadioButton TrueAnswer;
 
+    /** The RadioButton for False answer. */
     @FXML
     private RadioButton FalseAnswer;
 
+    /** The AnchorPane for Short question pane. */
     @FXML
     private AnchorPane ShortQuestionPane;
 
+    /** The text box for short question. */
     @FXML
     private Text ShortQuestion;
 
+    /** The text box for short question's answer. */
     @FXML
     private TextField ShortAnswer;
 
+    /** The hint button for Multiple Choice question. */
     @FXML
     private Button Hint;
 
+    /** The hint button for short question. */
     @FXML
     private Button HintShort;
 
+    /** The hint button for True/False question. */
     @FXML
     private Button HintTF;
 
+    /** The submit button for submitting answer. */
     @FXML
     private Button submit;
 
+    /**
+     * Returns the translate x of character.
+     * @return the translate x of character.
+     */
     private double getCharX() {
         return this.charX = Move.getTranslateX();
     }
 
+    /**
+     * Returns the translate y of character.
+     * @return the translate y of character.
+     */
     private double getCharY() {
         return this.charY = Move.getTranslateY();
     }
 
     /**
-     *
+     * A method for mouse drag.
      * @param event the action event
      */
     @FXML
@@ -174,7 +193,7 @@ public class Controller implements Initializable {
 
 
     /**
-     *
+     * A method for mouse press.
      * @param event the action event
      */
     @FXML
@@ -240,7 +259,8 @@ public class Controller implements Initializable {
     }
 
     /**
-     *
+     * A method that allows the users to move to different room
+     * when they answer the question correct.
      * @param event the action event
      * @throws IOException
      */
@@ -290,7 +310,7 @@ public class Controller implements Initializable {
     }
 
     /**
-     * Creates an alert when the user win or lose.
+     * Creates an alert when the users win or lose.
      * @param event the action event
      */
     private void createAlert(ActionEvent event){
@@ -328,34 +348,33 @@ public class Controller implements Initializable {
     }
 
     /**
-     *
+     * Set the hint button disable when hint is zero.
      */
     void setHint (){
         if (maze.getHints()==0) {
-            if (q.getType().toString().equals("MC")) {
-                Hint.setDisable(true);
-            }
-            else if (q.getType().toString().equals("TF")) {
-                HintTF = (Button)TFQuestionPane.lookup("#HintTF");
-                HintTF.setDisable(true);
-            }
-            else if (q.getType().toString().equals("SHORT")){
-                HintShort = (Button)ShortQuestionPane.lookup("#HintShort");
-                HintShort.setDisable(true);
-            }
+            setDisableHint(true);
         }
         else {
-            if (q.getType().toString().equals("MC")) {
-                Hint.setDisable(false);
-            }
-            else if (q.getType().toString().equals("TF")) {
-                HintTF = (Button)TFQuestionPane.lookup("#HintTF");
-                HintTF.setDisable(false);
-            }
-            else if (q.getType().toString().equals("SHORT")){
-                HintShort = (Button)ShortQuestionPane.lookup("#HintShort");
-                HintShort.setDisable(false);
-            }
+            setDisableHint(false);
+        }
+    }
+
+    /**
+     * A method that takes a boolean value to set the hint button
+     * disable or not.
+     * @param bool the boolean value.
+     */
+    private void setDisableHint(Boolean bool) {
+        if (q.getType().toString().equals("MC")) {
+            Hint.setDisable(bool);
+        }
+        else if (q.getType().toString().equals("TF")) {
+            HintTF = (Button)TFQuestionPane.lookup("#HintTF");
+            HintTF.setDisable(bool);
+        }
+        else if (q.getType().toString().equals("SHORT")){
+            HintShort = (Button)ShortQuestionPane.lookup("#HintShort");
+            HintShort.setDisable(bool);
         }
     }
 
@@ -457,17 +476,7 @@ public class Controller implements Initializable {
         alert.getButtonTypes().setAll(buttonType);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == buttonType){
-            if (q.getType().toString().equals("MC")) {
-                Hint.setDisable(true);
-            }
-            else if (q.getType().toString().equals("TF")) {
-                HintTF = (Button)TFQuestionPane.lookup("#HintTF");
-                HintTF.setDisable(true);
-            }
-            else if (q.getType().toString().equals("SHORT")){
-                HintShort = (Button)ShortQuestionPane.lookup("#HintShort");
-                HintShort.setDisable(true);
-            }
+            setDisableHint(true);
             maze.decreaseHint();
         }
     }

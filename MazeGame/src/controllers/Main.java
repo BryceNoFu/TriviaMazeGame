@@ -9,13 +9,13 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 /**
- *
+ * JavaFX application.
  */
 public class Main extends Application {
 
     /**
-     *
-     * @param primaryStage
+     * Creates the main entry point for JavaFX Application.
+     * @param primaryStage the primary stage
      * @throws Exception
      */
     @Override
@@ -29,7 +29,7 @@ public class Main extends Application {
     }
 
     /**
-     *
+     * Launches the JavaFX application.
      * @param args
      */
     public static void main(String... args) {
