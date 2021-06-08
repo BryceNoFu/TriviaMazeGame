@@ -64,7 +64,7 @@
 64	tf	Mercer Island is an artificial island island	TRUE	FALSE			FALSE	It''s been settled by non-indigenous people since the 1800''s.
 65	tf	Lake Washington is connected to the ocean, so the lake is filled with saltwater.	TRUE	FALSE			FALSE	Ballard Locks exists…
 66	tf	The term "Seattle Freeze" refers to the difficulty of making new friends in Seattle.	TRUE	FALSE			TRUE	Seattle can be cold, in more ways than one.
-67	tf	Funko Inc., known for the Funko Pop! line, is headquartered at Edmons, Washington. 	TRUE	FALSE			FALSE	It''s guaranteed that its location is north of Seattle and starts with an "E".
+67	tf	Funko Inc., known for the Funko Pop! line, is headquartered at Edmonds, Washington. 	TRUE	FALSE			FALSE	It''s guaranteed that its location is north of Seattle and starts with an "E".
 68	tf	The city of Leavenworth in Chelan County is modeled on the Bavarian village since the 1960''s.	TRUE	FALSE			TRUE	Bavaria is Land in southeastern Germany.
 69	tf	The official Washington state flower is the forget-me-not.	TRUE	FALSE			FALSE	Alaska thinks you''re a little forgetful…
 70	tf	Before forming the rock band Pearl Jam, frontman Eddie Vedder was part of the Seattle grunge group Alice in Chains.	TRUE	FALSE			FALSE	He was in a dog temple.
