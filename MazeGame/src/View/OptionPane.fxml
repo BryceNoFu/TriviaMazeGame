@@ -43,7 +43,7 @@
                               <SepiaTone />
                            </effect>
                         </Text>
-                        <Slider style="-fx-border-color: Transparent; -fx-background-color: Transparent;">
+                        <Slider fx:id="slider" blockIncrement="1.0" prefHeight="11.0" prefWidth="190.0" style="-fx-border-color: Transparent; -fx-background-color: Transparent;" value="50.0">
                            <effect>
                               <SepiaTone />
                            </effect>

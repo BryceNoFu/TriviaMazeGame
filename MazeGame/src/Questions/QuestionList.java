@@ -31,7 +31,7 @@ public class QuestionList {
     public QuestionList() {
         questionList = new ArrayList<>();
         obtainQuestions();
-        //shuffle();
+        shuffle();
     }
 
     // methods

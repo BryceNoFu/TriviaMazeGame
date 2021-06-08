@@ -3,6 +3,9 @@ package View;
 import MazeAndRoom.*;
 import Questions.Question;
 import Questions.QuestionList;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableSetValue;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,11 +26,8 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.stage.Window;
-
 import java.io.*;
 import java.net.URL;
-import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -39,20 +39,12 @@ public class Controller implements Initializable {
     private Scene scene;
     private QuestionList question = new QuestionList();
     private Maze maze = new Maze(5,5,3,new Point(0,1));
-    private  double charX;
-    private  double charY;
-    private Save save;
-    private ObservableList<Save> list;
     private Media media;
     private AudioClip audioClip;
     private final double X_AMOUNT = 93;
     private final double Y_AMOUNT = 60;
+    private FileChooser fileChooser = new FileChooser();
 
-
-
-    @FXML
-    private AnchorPane fieldScene;
-    FileChooser fileChooser = new FileChooser();
     @FXML
     private AnchorPane Move;
 
@@ -78,9 +70,40 @@ public class Controller implements Initializable {
     @FXML
     private BorderPane roomPane;
 
-
+    @FXML
+    private Slider slider;
     private Question q;
     private String door;
+
+    @FXML
+    private AnchorPane TFQuestionPane;
+
+    @FXML
+    private Text TFTextQuestion;
+
+    @FXML
+    private RadioButton TrueAnswer;
+
+    @FXML
+    private RadioButton FalseAnswer;
+
+    @FXML
+    private AnchorPane ShortQuestionPane;
+
+    @FXML
+    private Text ShortQuestion;
+
+    @FXML
+    private TextField ShortAnswer;
+
+    @FXML
+    private Button Hint;
+
+    @FXML
+    private Button HintShort;
+
+    @FXML
+    private Button HintTF;
 
 
 
@@ -95,7 +118,6 @@ public class Controller implements Initializable {
     void pressed(MouseEvent event) {
         x = event.getSceneX();
         y = event.getSceneY();
-
     }
     @FXML
     void quit(MouseEvent event) {
@@ -137,7 +159,9 @@ public class Controller implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+        
     }
+
 
     @FXML
     void switchToOptionPane (ActionEvent event) throws IOException{
@@ -147,17 +171,8 @@ public class Controller implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }
-    @FXML
-    void switchToNextPane (ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("TestDialog.fxml"));
-        node = (Node) event.getSource();
-        stage = (Stage) node.getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 
+    }
 
     @FXML
     void clickedMove(MouseEvent event) throws IOException {
@@ -178,23 +193,37 @@ public class Controller implements Initializable {
         }
         else{
             roomPane.setVisible(false);
-            questionPane.setVisible(true);
             q = question.getQuestion();
             String[] arr = q.getChoices();
-            textQuestion.setTextAlignment(TextAlignment.CENTER);
-            textQuestion.setText(q.getQuestionStr());
-            Box1.setText(arr[0]);
-            Box2.setText(arr[1]);
-            Box3.setText(arr[2]);
-            Box4.setText(arr[3]);
+            if (q.getType().toString().equals("MC")) {
+                questionPane.setVisible(true);
+                textQuestion.setTextAlignment(TextAlignment.CENTER);
+                textQuestion.setText(q.getQuestionStr());
+                Box1.setText(arr[0]);
+                Box2.setText(arr[1]);
+                Box3.setText(arr[2]);
+                Box4.setText(arr[3]);
+            }
+            else if (q.getType().toString().equals("TF")){
+                TFQuestionPane.setVisible(true);
+                TFTextQuestion.setTextAlignment(TextAlignment.CENTER);
+                TFTextQuestion.setText(q.getQuestionStr());
+                TrueAnswer.setText(arr[0]);
+                FalseAnswer.setText(arr[1]);
+            }
+            else if (q.getType().toString().equals("SHORT")){
+                ShortQuestionPane.setVisible(true);
+                ShortQuestion.setTextAlignment(TextAlignment.CENTER);
+                ShortQuestion.setText(q.getQuestionStr());
+            }
         }
     }
     private void createAlert(ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         if (maze.checkWin()) {
-            alert.setTitle("You Win!!!!");
+            alert.setHeaderText("You Win!!!!");
         }else if (maze.checkLose()){
-            alert.setTitle("You Lose!!!!");
+            alert.setHeaderText("You Lose!!!!");
         }
         ButtonType playAgainButton = new ButtonType("Play Again");
         ButtonType mainMenuButton = new ButtonType("Main Menu", ButtonBar.ButtonData.CANCEL_CLOSE);
@@ -215,8 +244,40 @@ public class Controller implements Initializable {
             }
         }
     }
+    void setHint (){
+        if (maze.getHints()==0) {
+            if (q.getType().toString().equals("MC")) {
+                Hint.setDisable(true);
+            }
+            else if (q.getType().toString().equals("TF")) {
+                HintTF = (Button)TFQuestionPane.lookup("#HintTF");
+                HintTF.setDisable(true);
+            }
+            else if (q.getType().toString().equals("SHORT")){
+                HintShort = (Button)ShortQuestionPane.lookup("#HintShort");
+                HintShort.setDisable(true);
+            }
+        }
+        else {
+            if (q.getType().toString().equals("MC")) {
+                Hint.setDisable(false);
+            }
+            else if (q.getType().toString().equals("TF")) {
+                HintTF = (Button)TFQuestionPane.lookup("#HintTF");
+                HintTF.setDisable(false);
+            }
+            else if (q.getType().toString().equals("SHORT")){
+                HintShort = (Button)ShortQuestionPane.lookup("#HintShort");
+                HintShort.setDisable(false);
+            }
+        }
+    }
     @FXML
     void cheatButton(ActionEvent event){
+        setHint();
+        TFQuestionPane.setVisible(false);
+        ShortQuestionPane.setVisible(false);
+        questionPane.setVisible(false);
         if (maze.canMove(door)) {
             moveCha(door);
         }
@@ -226,6 +287,7 @@ public class Controller implements Initializable {
     }
     @FXML
     void submitButton(ActionEvent event) {
+        setHint();
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setHeaderText("Please choose answer!!");
         Alert alert2 = new Alert(Alert.AlertType.WARNING);
@@ -233,25 +295,66 @@ public class Controller implements Initializable {
         Alert alert4 = new Alert(Alert.AlertType.WARNING);
         alert4.setHeaderText("Lose!!!!");
         RadioButton toggle = (RadioButton) toggleGroup.getSelectedToggle();
-        if (toggleGroup.getSelectedToggle()==null&&questionPane.isVisible()==true){
-            alert.showAndWait();
-        }
-        else {
-            if (q.isCorrect(toggle.getText())) {
-                questionPane.setVisible(false);
+        if (q.getType().toString().equals("SHORT")){
+            if (q.isCorrect(ShortAnswer.getText())){
+                ShortQuestionPane.setVisible(false);
                 moveCha(door);
-                if (maze.checkWin()){
+                if (maze.checkWin()) {
                     createAlert(event);
                 }
-            } else {
-                roomPane.setVisible(true);
-                questionPane.setVisible(false);
-                closeTheDoor(door);
-                if (maze.checkLose()){
-                    createAlert(event);
-                }else alert2.showAndWait();
             }
-            toggleGroup.getSelectedToggle().setSelected(false);
+            else {
+                roomPane.setVisible(true);
+                ShortQuestionPane.setVisible(false);
+                closeTheDoor(door);
+                if (maze.checkLose()) {
+                    createAlert(event);
+                } else alert2.showAndWait();
+            }
+        }else {
+            if (toggleGroup.getSelectedToggle() == null && questionPane.isVisible() == true) {
+                alert.showAndWait();
+            } else {
+                if (q.isCorrect(toggle.getText())) {
+                    questionPane.setVisible(false);
+                    TFQuestionPane.setVisible(false);
+                    moveCha(door);
+                    if (maze.checkWin()) {
+                        createAlert(event);
+                    }
+                } else {
+                    roomPane.setVisible(true);
+                    questionPane.setVisible(false);
+                    TFQuestionPane.setVisible(false);
+                    closeTheDoor(door);
+                    if (maze.checkLose()) {
+                        createAlert(event);
+                    } else alert2.showAndWait();
+                }
+                toggleGroup.getSelectedToggle().setSelected(false);
+            }
+        }
+    }
+    @FXML
+    void hintButton(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setHeaderText(q.getHint() + "\n Remaining hint: " + (maze.getHints()-1));
+        ButtonType buttonType = new ButtonType("Ok", ButtonBar.ButtonData.OK_DONE);
+        alert.getButtonTypes().setAll(buttonType);
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == buttonType){
+            if (q.getType().toString().equals("MC")) {
+                Hint.setDisable(true);
+            }
+            else if (q.getType().toString().equals("TF")) {
+                HintTF = (Button)TFQuestionPane.lookup("#HintTF");
+                HintTF.setDisable(true);
+            }
+            else if (q.getType().toString().equals("SHORT")){
+                HintShort = (Button)ShortQuestionPane.lookup("#HintShort");
+                HintShort.setDisable(true);
+            }
+            maze.decreaseHint();
         }
     }
     private void closeTheDoor (String string){
@@ -268,55 +371,12 @@ public class Controller implements Initializable {
             maze.getRoom().closeDoor(Room.Door.SOUTH);
         }
     }
-    @FXML
-    void saveClicked(ActionEvent event) {
-        Window window = fieldScene.getScene().getWindow();
-        fileChooser.setTitle("Save Dialog");
-        fileChooser.setInitialFileName("Maze");
-        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("dat","*.dat"),
-                new FileChooser.ExtensionFilter("binary","*.bin"));
-        try{
-            File file = fileChooser.showSaveDialog(window);
-            fileChooser.setInitialDirectory(file.getParentFile());
-            String path = file.getAbsolutePath();
-            FileOutputStream newFile = new FileOutputStream(path);
-            ObjectOutputStream out = new ObjectOutputStream(newFile);
-            save = new Save(maze,charX,charY,question);
-            out.writeObject(save);
-        }catch (Exception e){
-
-        }
-    }
-
-    @FXML
-    void loadClicked(ActionEvent event) {
-        Window window = fieldScene.getScene().getWindow();
-        fileChooser.setTitle("Load Dialog");
-        fileChooser.setInitialFileName("Maze");
-        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("dat","*.dat"),
-                new FileChooser.ExtensionFilter("binary","*.bin"));
-        try{
-            File file = fileChooser.showOpenDialog(window);
-            fileChooser.setInitialDirectory(file.getParentFile());
-            String path = file.getAbsolutePath();
-            ObjectInputStream in = new ObjectInputStream(new FileInputStream(path));
-            list = FXCollections.observableList((List<Save>) in.readObject());
-            save = list.get(0);
-            //save = (Save) in.readObject();
-            setCharX(save.getCharX());
-            setCharY(save.getCharY());
-            question = save.getQuestion();
-            maze.setPosition(2,2);
-        }catch (Exception e){
-
-        }
-    }
 
     @FXML
     void reset(ActionEvent event) {
         Move.setTranslateX(0);
         Move.setTranslateY(0);
-        maze = new Maze(5,5,0,new Point(0,1));
+        maze = new Maze(5,5,3,new Point(0,1));
         question = new QuestionList();
     }
     private void play (){
@@ -324,8 +384,12 @@ public class Controller implements Initializable {
         media = new Media(new File(file).toURI().toString());
         audioClip = new AudioClip(media.getSource());
         audioClip.play(2.0);
-        audioClip.setVolume(2.0);
-        System.out.println(audioClip.isPlaying());
+        slider.valueProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                audioClip.setVolume(slider.getValue()*0.01);
+            }
+        });
     }
     private void setCharY (double y){
         Move.setTranslateY(Move.getTranslateY()+y);
