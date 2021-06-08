@@ -266,7 +266,6 @@ public class Controller implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
     /**
@@ -419,8 +418,6 @@ public class Controller implements Initializable {
         alert.setHeaderText("Please choose answer!!");
         Alert alert2 = new Alert(Alert.AlertType.WARNING);
         alert2.setHeaderText("Door's locked!");
-        Alert alert4 = new Alert(Alert.AlertType.WARNING);
-        alert4.setHeaderText("Lose!!!!");
         RadioButton toggle = (RadioButton) toggleGroup.getSelectedToggle();
         if (q.getType().toString().equals("SHORT")){
             if (q.isCorrect(ShortAnswer.getText())){
@@ -496,7 +493,7 @@ public class Controller implements Initializable {
      * A method that takes file name and plays sound.
      * @param fileName the file name
      */
-    private void playSound(String fileName) {
+    public void playSound(String fileName) {
         Media media1 = new Media(new File(fileName).toURI().toString());
         MediaPlayer mediaPlayer1 = new MediaPlayer(media1);
         mediaPlayer1.setVolume(.5);
@@ -560,25 +557,35 @@ public class Controller implements Initializable {
         Move.setTranslateY(0);
         maze = new Maze(5,5,3,new Point(0,1));
         question = new QuestionList();
+        node = (Node) event.getSource();
+        scene = node.getScene();
+        setVisiblePane(false, scene);
+    }
+
+    /**
+     * Set the pane visible or not.
+     * @param bool the boolean value
+     */
+    private void setVisiblePane(boolean bool, Scene scene) {
         if (q.getType().toString().equals("MC")) {
+            questionPane = (AnchorPane) scene.lookup("#questionPane");
             questionPane.setVisible(false);
         }
         else if (q.getType().toString().equals("TF")) {
+            TFQuestionPane = (AnchorPane) scene.lookup("#TFQuestionPane");
             TFQuestionPane.setVisible(false);
         }
         else if (q.getType().toString().equals("SHORT")){
+            ShortQuestionPane = (AnchorPane) scene.lookup("#ShortQuestionPane");
             ShortQuestionPane.setVisible(false);
         }
-        mediaPlayer.seek(Duration.ZERO);
     }
-
     /**
      * A method that allows the user to save game.
      * @param event the action event
      */
     @FXML
     void saveClicked(ActionEvent event) {
-
         try {
             ObjectOutputStream out1 = new ObjectOutputStream(new FileOutputStream(new File("maze.dat")));
             out1.writeObject(new Store(maze, question));
@@ -612,16 +619,9 @@ public class Controller implements Initializable {
             Move.setTranslateX(Move.getTranslateX() + list.get(0));
             Move.setTranslateY(Move.getTranslateY() + list.get(1));
             roomPane.setVisible(true);
-            if (q.getType().toString().equals("MC")) {
-                questionPane.setVisible(false);
-            }
-            else if (q.getType().toString().equals("TF")) {
-                TFQuestionPane.setVisible(false);
-            }
-            else if (q.getType().toString().equals("SHORT")){
-                ShortQuestionPane.setVisible(false);
-            }
-            mediaPlayer.seek(Duration.ZERO);
+            node = (Node) event.getSource();
+            scene = node.getScene();
+            setVisiblePane(false, scene);
         } catch (Exception e) {
             e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -637,12 +637,8 @@ public class Controller implements Initializable {
      */
     @FXML
     void switchToLoadField (ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("../view/Field.fxml"));
-        node = (Node) event.getSource();
-        stage = (Stage) node.getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
         try {
+            switchToField(event);
             ObjectInputStream in = new ObjectInputStream(new FileInputStream(new File("maze.dat")));
             Store store = (Store) in.readObject();
             maze = store.getMaze();
@@ -652,23 +648,14 @@ public class Controller implements Initializable {
             Move = (AnchorPane) scene.lookup("#Move");
             Move.setTranslateX(Move.getTranslateX() + list.get(0));
             Move.setTranslateY(Move.getTranslateY() + list.get(1));
+            roomPane = (BorderPane) scene.lookup("#roomPane");
             roomPane.setVisible(true);
-            if (q.getType().toString().equals("MC")) {
-                questionPane.setVisible(false);
-            }
-            else if (q.getType().toString().equals("TF")) {
-                TFQuestionPane.setVisible(false);
-            }
-            else if (q.getType().toString().equals("SHORT")){
-                ShortQuestionPane.setVisible(false);
-            }
-            mediaPlayer.seek(Duration.ZERO);
+            setVisiblePane(false, scene);
         } catch (Exception e) {
             e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setHeaderText("The file does not exist!!");
         }
-        stage.show();
     }
 
     /**
@@ -678,11 +665,6 @@ public class Controller implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        String file = new File("src/resources/Monkeys-Spinning-Monkeys.mp3").getAbsolutePath();
-        media = new Media(new File(file).toURI().toString());
-        mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.setVolume(.05);
-        mediaPlayer.play();
         fileChooser.setInitialDirectory(new File("C:/Users/Nat/Desktop/TCSS360/git/Trivia/javafx/TriviaMazeGame/MazeGame"));
     }
 }

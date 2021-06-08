@@ -31,7 +31,7 @@ public class QuestionList implements Serializable {
     public QuestionList() {
         questionList = new ArrayList<>();
         obtainQuestions();
-        //shuffle();
+        shuffle();
     }
 
     // methods
