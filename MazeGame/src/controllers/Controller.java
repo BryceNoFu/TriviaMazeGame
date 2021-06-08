@@ -163,6 +163,17 @@ public class Controller implements Initializable {
     @FXML
     private Button submit;
 
+    /** The submit button for submitting answer. */
+    @FXML
+    private Button load;
+
+    /** The submit button for submitting answer. */
+    @FXML
+    private Button save;
+
+    @FXML
+    private AnchorPane fieldScene;
+
     /**
      * Returns the translate x of character.
      * @return the translate x of character.
@@ -351,7 +362,7 @@ public class Controller implements Initializable {
      * Set the hint button disable when hint is zero.
      */
     void setHint (){
-        if (maze.getHints()==0) {
+        if (maze.getHints()<=0) {
             setDisableHint(true);
         }
         else {
@@ -544,10 +555,20 @@ public class Controller implements Initializable {
      */
     @FXML
     void reset(ActionEvent event) {
+        roomPane.setVisible(true);
         Move.setTranslateX(0);
         Move.setTranslateY(0);
         maze = new Maze(5,5,3,new Point(0,1));
         question = new QuestionList();
+        if (q.getType().toString().equals("MC")) {
+            questionPane.setVisible(false);
+        }
+        else if (q.getType().toString().equals("TF")) {
+            TFQuestionPane.setVisible(false);
+        }
+        else if (q.getType().toString().equals("SHORT")){
+            ShortQuestionPane.setVisible(false);
+        }
         mediaPlayer.seek(Duration.ZERO);
     }
 
@@ -590,6 +611,16 @@ public class Controller implements Initializable {
             Move.setTranslateY(0);
             Move.setTranslateX(Move.getTranslateX() + list.get(0));
             Move.setTranslateY(Move.getTranslateY() + list.get(1));
+            roomPane.setVisible(true);
+            if (q.getType().toString().equals("MC")) {
+                questionPane.setVisible(false);
+            }
+            else if (q.getType().toString().equals("TF")) {
+                TFQuestionPane.setVisible(false);
+            }
+            else if (q.getType().toString().equals("SHORT")){
+                ShortQuestionPane.setVisible(false);
+            }
             mediaPlayer.seek(Duration.ZERO);
         } catch (Exception e) {
             e.printStackTrace();
@@ -621,6 +652,16 @@ public class Controller implements Initializable {
             Move = (AnchorPane) scene.lookup("#Move");
             Move.setTranslateX(Move.getTranslateX() + list.get(0));
             Move.setTranslateY(Move.getTranslateY() + list.get(1));
+            roomPane.setVisible(true);
+            if (q.getType().toString().equals("MC")) {
+                questionPane.setVisible(false);
+            }
+            else if (q.getType().toString().equals("TF")) {
+                TFQuestionPane.setVisible(false);
+            }
+            else if (q.getType().toString().equals("SHORT")){
+                ShortQuestionPane.setVisible(false);
+            }
             mediaPlayer.seek(Duration.ZERO);
         } catch (Exception e) {
             e.printStackTrace();
