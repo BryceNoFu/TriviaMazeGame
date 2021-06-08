@@ -1,25 +1,25 @@
 .image{
-    -fx-background-image: url("wall.jpg");
+    -fx-background-image: url("../resources/wall.jpg");
     -fx-background-size: cover;
 }
 .character {
-    -fx-background-image: url("CharacterIcon.png");
+    -fx-background-image: url("../resources/CharacterIcon.png");
     -fx-background-size: cover;
 }
 .exitDoor{
-    -fx-background-image: url("exitDoor.jpg");
+    -fx-background-image: url("../resources/exitDoor.jpg");
     -fx-background-size: cover;
 }
 .ground{
-    -fx-background-image: url("ground.jpg");
+    -fx-background-image: url("../resources/ground.jpg");
     -fx-background-size: cover;
 }
 .door{
-    -fx-background-image: url("Door.jpg");
+    -fx-background-image: url("../resources/Door.jpg");
     -fx-background-size: cover;
 }
 .darkWall{
-    -fx-background-image: url("DarkWall.png");
+    -fx-background-image: url("../resources/DarkWall.png");
     -fx-background-size: cover;
 }
 .dark-blue {

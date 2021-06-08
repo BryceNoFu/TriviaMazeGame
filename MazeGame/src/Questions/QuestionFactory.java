@@ -1,4 +1,7 @@
-package Questions;
+package questions;
+
+import java.io.Serial;
+import java.io.Serializable;
 
 /**
  * Factory to instantiate a class based on the given
@@ -6,7 +9,10 @@ package Questions;
  *
  * @author Bryce Fukuda
  */
-public class QuestionFactory {
+public class QuestionFactory implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = -9134659562765668456L;
 
     /**
      * Creates a question class based on the type of question provided and arguments for the
@@ -24,28 +30,25 @@ public class QuestionFactory {
      * @return constructed question class
      */
     public static Question createQuestion(String type,
-                                   int id,
-                                   String questionStr,
-                                   String choice1,
-                                   String choice2,
-                                   String choice3,
-                                   String choice4,
-                                   String answer,
-                                   String hint) {
+                                          int id,
+                                          String questionStr,
+                                          String choice1,
+                                          String choice2,
+                                          String choice3,
+                                          String choice4,
+                                          String answer,
+                                          String hint) {
 
-        switch (type) {
-            case "mc": { // multiple choice
-                final String[] choices = {choice1, choice2, choice3, choice4};
-                return new QuestionMC(id, questionStr, choices, answer, hint);
-            }
-            case "tf": { // true/false
-                final String[] choices = {choice1, choice2};
-                return new QuestionTF(id, questionStr, choices, answer, hint);
-            }
-            case "short": // short answer
-                return new QuestionSHORT(id, questionStr, answer, hint);
-            default:
-                return null;
+        if (type.equals("mc")) { // multiple choice
+            String[] choices = {choice1, choice2, choice3, choice4};
+            return new QuestionMC(id, questionStr, choices, answer, hint);
+        } else if (type.equals("tf")) { // true/false
+            String[] choices = {choice1, choice2};
+            return new QuestionTF(id, questionStr, choices, answer, hint);
+        } else if (type.equals("short")) {
+            return new QuestionSHORT(id, questionStr, answer, hint);
+        } else {
+            return null;
         }
 
     }

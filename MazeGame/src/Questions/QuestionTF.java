@@ -1,4 +1,6 @@
-package Questions;
+package questions;
+
+import java.io.Serializable;
 
 /**
  * Question of type true or false. Player must pick
@@ -6,26 +8,20 @@ package Questions;
  *
  * @author Bryce Fukuda
  */
-public class QuestionTF extends QuestionGeneral {
+public class QuestionTF extends QuestionGeneral implements Serializable {
     // fields
+    /**
+     * Serialization for the question.
+     */
+    private static final long serialVersionUID = -230647009084190467L;
 
     /**
      * String array to store two choices (TRUE / FALSE).
      */
-    private final String[] choices;
+    private String[] choices;
 
     // constructors
-
-    /**
-     * Constructor to the true/false question class, parameters as question components.
-     *
-     * @param id question id
-     * @param question question string
-     * @param choices two choices (true or false)
-     * @param answer answer to question
-     * @param hint hint to question
-     */
-    QuestionTF(int id, String question, String[] choices, String answer, String hint) {
+    public QuestionTF(int id, String question, String[] choices, String answer, String hint) {
         super(id, question, answer, hint);
         this.choices = choices;
         this.setType(Type.TF);
@@ -40,12 +36,6 @@ public class QuestionTF extends QuestionGeneral {
         return choices;
     }
 
-    /**
-     * A multi-line string containing all components to the true/false
-     * question class.
-     *
-     * @return id, question, 2 choices, answer, and hint for question
-     */
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();

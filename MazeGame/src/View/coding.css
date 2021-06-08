@@ -1,7 +1,7 @@
 .back{
-    -fx-background-image: url("maze.jpg");
+    -fx-background-image: url("../resources/maze.jpg");
     -fx-background-size: cover;
 }
 .image{
-    -fx-background-image: url("wall.jpg");
+    -fx-background-image: url("../resources/wall.jpg");
 }

@@ -1,10 +1,11 @@
-package Questions;
+package test.questions;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import questions.Question;
+import questions.QuestionFactory;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test class for QuestionFactoryTest, creating some sample questions and

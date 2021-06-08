@@ -1,6 +1,7 @@
-package Questions;
+package questions;
 
-
+import java.io.Serial;
+import java.io.Serializable;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,12 +15,14 @@ import java.util.List;
  *
  * @author Bryce Fukuda
  */
-public class QuestionList {
+public class QuestionList implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 9191262959905779880L;
     // fields
     /**
      * List to store questions into.
      */
-    private final List<Question> questionList;
+    private List<Question> questionList;
 
     // constructors
     /**
@@ -28,7 +31,7 @@ public class QuestionList {
     public QuestionList() {
         questionList = new ArrayList<>();
         obtainQuestions();
-        shuffle();
+        //shuffle();
     }
 
     // methods
@@ -37,7 +40,7 @@ public class QuestionList {
      * into the List, stored as
      */
     private void obtainQuestions() {
-        Connection connection;
+        Connection connection = null;
         try {
             // connection to database
             connection = DriverManager.getConnection("jdbc:sqlite:src/database/questions.db");
@@ -82,7 +85,11 @@ public class QuestionList {
      * @return true if empty, false otherwise
      */
     public boolean isEmpty() {
-        return questionList.isEmpty();
+        if (questionList.isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**

@@ -1,7 +1,9 @@
-package Questions;
+package test.questions;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import questions.Question;
+import questions.QuestionTF;
 
 import static org.junit.jupiter.api.Assertions.*;
 
