@@ -19,7 +19,11 @@ import java.net.URL;
  * JavaFX application.
  */
 public class Main extends Application {
-
+    /**
+     * MediaPlayer for background music.
+     */
+    private static MediaPlayer mediaPlayer;
+    
     /**
      * Creates the main entry point for JavaFX Application.
      * @param primaryStage the primary stage
@@ -33,11 +37,11 @@ public class Main extends Application {
         Media media = new Media(resource.toExternalForm());
         //Media media = new Media(getHostServices().getDocumentBase() + "src/resources/Monkeys-Spinning-Monkeys.wav");
         //new File(file).toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setVolume(.05);
         mediaPlayer.setAutoPlay(true);
         mediaPlayer.setOnEndOfMedia(() -> mediaPlayer.seek(Duration.ZERO));
-        mediaPlayer.play();
+
 
         /* Alternative setup to music */
         //String file = new File("src/resources/Monkeys-Spinning-Monkeys.mp3").getAbsolutePath();
