@@ -110,7 +110,7 @@ public class Maze implements Serializable {
      * @return The room at current position
      */
     public Room getRoom() {
-        return this.rooms[this.currentPosition.getY()][this.currentPosition.getY()];
+        return this.rooms[this.currentPosition.getX()][this.currentPosition.getY()];
     }
 
     /**
