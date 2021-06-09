@@ -43,7 +43,8 @@ public class QuestionList implements Serializable {
         Connection connection = null;
         try {
             // connection to database
-            connection = DriverManager.getConnection("jdbc:sqlite:src/database/questions.db");
+
+            connection = DriverManager.getConnection("jdbc:sqlite::resource:database/questions.db");
             Statement statement = connection.createStatement(); // do commands to database
             statement.setQueryTimeout(15); // timeout set to 15 seconds
             String query = "SELECT * FROM questionTable";

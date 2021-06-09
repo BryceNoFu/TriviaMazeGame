@@ -29,7 +29,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         // setup for background music
         //String file = new File("src/resources/Monkeys-Spinning-Monkeys.mp3").toString();
-        URL resource = getClass().getResource("/resources/Monkeys-Spinning-Monkeys.wav");
+        URL resource = getClass().getClassLoader().getResource("resources/Monkeys-Spinning-Monkeys.wav");
         Media media = new Media(resource.toExternalForm());
         //Media media = new Media(getHostServices().getDocumentBase() + "src/resources/Monkeys-Spinning-Monkeys.wav");
         //new File(file).toURI().toString());

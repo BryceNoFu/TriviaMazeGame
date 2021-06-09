@@ -25,115 +25,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MazeGame_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/org_junit_jupiter_junit_jupiter_5_4_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/org_junit_jupiter_junit_jupiter_5_4_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_34_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_34_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Maze.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Maze.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Maze.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Maze.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MazeGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MazeGame.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/MazeAndRoom/Maze.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/MazeAndRoom/Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/MazeAndRoom/Room$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/MazeAndRoom/Room$Door.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/MazeAndRoom/Room.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/MazeAndRoom/Store.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MazeGame_jar/MazeGame.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MazeGame_jar/MazeGame.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/Questions/Question$Type.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/Questions/Question$Type.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/Questions/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/Questions/Question.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/Questions/QuestionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/Questions/QuestionFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/Questions/QuestionGeneral.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/Questions/QuestionGeneral.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MazeGame/Questions/QuestionList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/Questions/QuestionList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/About.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/View/About.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/CharacterIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/DarkWall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/Door.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/Field.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/View/Field.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/Music/.peritune-spook4.mp3.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/NewGameScene.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/Option.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/OptionPane.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/Pane.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/View/Pane.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/Rainer.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/RoomController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/Save.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/Scene1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/View/Scene1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/TestDialog.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/coding.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/View/coding.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/dialogTest.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/exitDoor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/ground.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/maze.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/mixkit-ominous-drums-227.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/music1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/peritune-spook4.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/test.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/View/wall.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/Questions/QuestionMC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/Questions/QuestionMC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/Questions/QuestionSHORT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/Questions/QuestionSHORT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/Questions/QuestionTF.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/Questions/QuestionTF.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MazeGame/controllers/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/controllers/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/controllers/ExecuteMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/controllers/ExecuteMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MazeGame/controllers/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/controllers/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/database/Q_List.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/database/Q_List.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/database/questions.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/database/questions.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/database/QuestionExtractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/database/QuestionExtractor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MazeGame/maze/Maze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/maze/Maze.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/resources/Monkeys-Spinning-Monkeys.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/resources/Monkeys-Spinning-Monkeys.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/resources/exitDoor.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/resources/exitDoor.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMazeGame/View/Field.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMazeGame/View/Field.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMazeGame/View/NewGameScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMazeGame/View/NewGameScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMazeGame/View/Option.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMazeGame/View/Option.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMazeGame/View/Pane.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMazeGame/View/Pane.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMazeGame/View/Scene1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMazeGame/View/Scene1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMazeGame/View/coding.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMazeGame/View/coding.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMazeGame/View/dialogTest.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMazeGame/View/dialogTest.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMazeGame/View/test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMazeGame/View/test.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMazeGame/database/Q_List.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMazeGame/database/Q_List.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/MazeGame/MazeAndRoom/MazeTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/MazeGame/MazeAndRoom/PointTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/MazeGame/MazeAndRoom/RoomTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/MazeGame/MazeAndRoom/StoreTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/MazeGame/Questions/QuestionFactoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/MazeGame/Questions/QuestionListTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/MazeGame/Questions/QuestionMCTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/MazeGame/Questions/QuestionSHORTTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/MazeGame/Questions/QuestionTFTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/maze/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/maze/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/maze/Room$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/maze/Room$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/maze/Room$Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/maze/Room$Door.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/maze/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/maze/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/maze/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/maze/Store.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/test/maze/MazeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/test/maze/MazeTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/test/maze/PointTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/test/maze/PointTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/test/maze/RoomTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/test/maze/RoomTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/test/maze/StoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/test/maze/StoreTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/test/questions/QuestionFactoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/test/questions/QuestionFactoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/test/questions/QuestionListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/test/questions/QuestionListTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/test/questions/QuestionMCTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/test/questions/QuestionMCTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/test/questions/QuestionSHORTTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/test/questions/QuestionSHORTTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MazeGame/test/questions/QuestionTFTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MazeGame/test/questions/QuestionTFTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/Q_List.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Q_List.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/QuestionExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/QuestionExtractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/questions.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/questions.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maze/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/maze/Maze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maze/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/maze/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maze/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/maze/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maze/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/maze/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/questions/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/questions/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/questions/QuestionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/questions/QuestionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/questions/QuestionGeneral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/questions/QuestionGeneral.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/questions/QuestionList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/questions/QuestionList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/questions/QuestionMC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/questions/QuestionMC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/questions/QuestionSHORT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/questions/QuestionSHORT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/questions/QuestionTF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/questions/QuestionTF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Monkeys-Spinning-Monkeys.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/Monkeys-Spinning-Monkeys.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/exitDoor.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/exitDoor.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/maze/MazeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/maze/MazeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/maze/PointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/maze/PointTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/maze/RoomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/maze/RoomTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/maze/StoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/maze/StoreTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/questions/QuestionFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/questions/QuestionFactoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/questions/QuestionListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/questions/QuestionListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/questions/QuestionMCTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/questions/QuestionMCTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/questions/QuestionSHORTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/questions/QuestionSHORTTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/questions/QuestionTFTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/questions/QuestionTFTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/About.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/About.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Field.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Field.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Pane.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Pane.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Scene1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Scene1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/coding.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/coding.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,6 +170,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20804597" />
     <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
@@ -494,48 +422,54 @@
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623173936594" />
     <state x="2334" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623194438523" />
-    <state x="2609" y="309" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1623205459523">
+    <state x="2707" y="333" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1623212047053">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2609" y="309" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623205459523" />
+    <state x="787" y="333" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623211016142" />
+    <state x="2707" y="333" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623212047053" />
     <state x="704" y="103" key="Diagram.Print.Preview.Dialog" timestamp="1623180889497">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="704" y="103" key="Diagram.Print.Preview.Dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623180889497" />
-    <state x="2660" y="246" key="FileChooserDialogImpl" timestamp="1623205557396">
+    <state x="2660" y="246" key="FileChooserDialogImpl" timestamp="1623212071074">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="246" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623180902698" />
-    <state x="2660" y="246" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623205557396" />
-    <state width="1877" height="47" key="GridCell.Tab.0.bottom" timestamp="1623205710471">
+    <state x="740" y="246" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623210981570" />
+    <state x="2660" y="246" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623212071074" />
+    <state width="1877" height="307" key="GridCell.Tab.0.bottom" timestamp="1623221101898">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="47" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623205100752" />
-    <state width="1877" height="47" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623205710471" />
-    <state width="1877" height="47" key="GridCell.Tab.0.center" timestamp="1623205710471">
+    <state width="1877" height="307" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623216740229" />
+    <state width="1877" height="307" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623221101898" />
+    <state width="1877" height="307" key="GridCell.Tab.0.center" timestamp="1623221101897">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="47" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623205100752" />
-    <state width="1877" height="47" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623205710471" />
-    <state width="1877" height="47" key="GridCell.Tab.0.left" timestamp="1623205710471">
+    <state width="1877" height="307" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623216740229" />
+    <state width="1877" height="307" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623221101897" />
+    <state width="1877" height="307" key="GridCell.Tab.0.left" timestamp="1623221101897">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="47" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623205100752" />
-    <state width="1877" height="47" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623205710471" />
-    <state width="1877" height="47" key="GridCell.Tab.0.right" timestamp="1623205710471">
+    <state width="1877" height="307" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623216740229" />
+    <state width="1877" height="307" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623221101897" />
+    <state width="1877" height="307" key="GridCell.Tab.0.right" timestamp="1623221101897">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="47" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623205100752" />
-    <state width="1877" height="47" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623205710471" />
-    <state x="2360" y="94" key="SettingsEditor" timestamp="1623205561475">
+    <state width="1877" height="307" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623216740229" />
+    <state width="1877" height="307" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623221101897" />
+    <state x="2317" y="101" key="SettingsEditor" timestamp="1623212202847">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623174059558" />
-    <state x="2360" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623205561475" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1623197970158">
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623211027845" />
+    <state x="2317" y="101" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623212202847" />
+    <state x="764" y="388" key="classpath-attribute-editor" timestamp="1623210994942">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="764" y="388" key="classpath-attribute-editor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623210994942" />
+    <state x="2684" y="388" key="classpath-attribute-editor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623209637270" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1623212234576">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623197970158" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623212234576" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
