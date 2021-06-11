@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.scene.media.AudioClip;
 import maze.*;
 import questions.Question;
 import questions.QuestionList;
@@ -15,12 +16,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.io.*;
 import java.net.URL;
@@ -32,6 +31,8 @@ import java.util.ResourceBundle;
 /**
  * A controller class that allows the user to switch to different scene, save or load game
  * and navigate though the maze by answering the question correctly.
+ * @author Tien Thanh Truong, Natalie Nguyen Hong
+ * @version Spring 2021
  */
 public class Controller implements Initializable {
 
@@ -74,8 +75,8 @@ public class Controller implements Initializable {
     /** The media object. */
     private Media media;
 
-    /** The media player object. */
-    private MediaPlayer mediaPlayer;
+    /** The AudioClip object. */
+    private AudioClip audioClip;
 
     /** The AnchorPane object for maze pane. */
     @FXML
@@ -158,21 +159,6 @@ public class Controller implements Initializable {
     /** The hint button for True/False question. */
     @FXML
     private Button HintTF;
-
-    /** The submit button for submitting answer. */
-    @FXML
-    private Button submit;
-
-    /** The submit button for submitting answer. */
-    @FXML
-    private Button load;
-
-    /** The submit button for submitting answer. */
-    @FXML
-    private Button save;
-
-    @FXML
-    private AnchorPane fieldScene;
 
     /**
      * Returns the translate x of character.
@@ -473,8 +459,8 @@ public class Controller implements Initializable {
     }
 
     /**
-     *
-     * @param event
+     * Set hint button.
+     * @param event the event action.
      */
     @FXML
     void hintButton(ActionEvent event) {
@@ -494,10 +480,9 @@ public class Controller implements Initializable {
      * @param fileName the file name
      */
     public void playSound(String fileName) {
-        Media media1 = new Media(new File(fileName).toURI().toString());
-        MediaPlayer mediaPlayer1 = new MediaPlayer(media1);
-        mediaPlayer1.setVolume(.5);
-        mediaPlayer1.play();
+        media = new Media(new File(fileName).toURI().toString());
+        audioClip = new AudioClip(media.getSource());
+        audioClip.play(.5);
     }
 
     /**

@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 /**
  * Creates a Maze object containing nxn rooms.
- * @author Natalie Nguyen Hong
+ * @author Natalie Nguyen Hong, Tien Thanh Truong
  * @version Spring 2021
  */
 public class Maze implements Serializable {
@@ -110,7 +110,7 @@ public class Maze implements Serializable {
      * @return The room at current position
      */
     public Room getRoom() {
-        return this.rooms[this.currentPosition.getY()][this.currentPosition.getY()];
+        return this.rooms[this.currentPosition.getX()][this.currentPosition.getY()];
     }
 
     /**
@@ -218,7 +218,7 @@ public class Maze implements Serializable {
      * @return true if the current position is at the exit. Otherwise, false.
      */
     public boolean checkWin (){
-        return this.currentPosition.getX() == this.getHeight()-1 && this.currentPosition.getY() == getWidth()-2;
+        return this.currentPosition.getX() == this.getHeight()-1 && this.currentPosition.getY() == this.getWidth()-2;
     }
 
     /**
