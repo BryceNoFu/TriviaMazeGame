@@ -216,7 +216,7 @@ public class Controller implements Initializable {
      */
     @FXML
     void switchToScene1 (ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("../view/Scene1.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/Scene1.fxml"));
         node = (Node) event.getSource();
         stage = (Stage) node.getScene().getWindow();
         scene = new Scene(root);
@@ -231,7 +231,7 @@ public class Controller implements Initializable {
      */
     @FXML
     void switchToAboutScene (ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("../view/About.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/About.fxml"));
         node = (Node) event.getSource();
         stage = (Stage) node.getScene().getWindow();
         scene = new Scene(root);
@@ -246,7 +246,7 @@ public class Controller implements Initializable {
      */
     @FXML
     void switchToField (ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("../view/Field.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/Field.fxml"));
         node = (Node) event.getSource();
         stage = (Stage) node.getScene().getWindow();
         scene = new Scene(root);
@@ -312,12 +312,14 @@ public class Controller implements Initializable {
     private void createAlert(ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         if (maze.checkWin()) {
-            String file = new File("src/resources/win1.wav").getAbsolutePath();
-            playSound(file);
+            // String file = new File("src/resources/win1.wav").getAbsolutePath();
+            URL u = getClass().getClassLoader().getResource("resources/win1.wav");
+            playSound(u.toExternalForm());
             alert.setHeaderText("You Win!!!!");
         }else if (maze.checkLose()){
-            String file = new File("src/resources/lose1.wav").getAbsolutePath();
-            playSound(file);
+            // String file = new File("src/resources/lose1.wav").getAbsolutePath();
+            URL u = getClass().getClassLoader().getResource("resources/lose1.wav");
+            playSound(u.toExternalForm());
             alert.setHeaderText("You Lose!!!!");
         }
 
@@ -408,8 +410,9 @@ public class Controller implements Initializable {
         if (q.getType().toString().equals("SHORT")){
             if (q.isCorrect(ShortAnswer.getText())){
                 ShortQuestionPane.setVisible(false);
-                String file = new File("src/resources/rightchoice.wav").getAbsolutePath();
-                playSound(file);
+                URL u = getClass().getClassLoader().getResource("resources/rightchoice.wav");
+                // String file = new File("src/resources/rightchoice.wav").getAbsolutePath();
+                playSound(u.toExternalForm());
                 moveCharacter(door);
                 if (maze.checkWin()) {
                     createAlert(event);
@@ -422,20 +425,24 @@ public class Controller implements Initializable {
                 if (maze.checkLose()) {
                     createAlert(event);
                 } else {
-                    String file = new File("src/resources/Wrong-answer-sound-effect.mp3").getAbsolutePath();
-                    playSound(file);
+                    // String file = new File("src/resources/Wrong-answer-sound-effect.mp3").getAbsolutePath();
+                    URL u = getClass().getClassLoader().getResource("resources/Wrong-answer-sound-effect.mp3");
+                    playSound(u.toExternalForm());
                     alert2.showAndWait();
                 }
             }
         }else {
             if (toggleGroup.getSelectedToggle() == null && questionPane.isVisible() == true) {
                 alert.showAndWait();
+            } else if (toggleGroup.getSelectedToggle() == null && TFQuestionPane.isVisible() == true) {
+                alert.showAndWait();
             } else {
                 if (q.isCorrect(toggle.getText())) {
                     questionPane.setVisible(false);
                     TFQuestionPane.setVisible(false);
-                    String file = new File("src/resources/rightchoice.wav").getAbsolutePath();
-                    playSound(file);
+                    URL u = getClass().getClassLoader().getResource("resources/rightchoice.wav");
+                    // String file = new File("src/resources/rightchoice.wav").getAbsolutePath();
+                    playSound(u.toExternalForm());
                     moveCharacter(door);
                     if (maze.checkWin()) {
                         createAlert(event);
@@ -448,8 +455,9 @@ public class Controller implements Initializable {
                     if (maze.checkLose()) {
                         createAlert(event);
                     } else {
-                        String file = new File("src/resources/Wrong-answer-sound-effect.mp3").getAbsolutePath();
-                        playSound(file);
+                        // String file = new File("src/resources/Wrong-answer-sound-effect.mp3").getAbsolutePath();
+                        URL u = getClass().getClassLoader().getResource("resources/Wrong-answer-sound-effect.mp3");
+                        playSound(u.toExternalForm());
                         alert2.showAndWait();
                     }
                 }
